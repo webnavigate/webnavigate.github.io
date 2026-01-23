@@ -1,297 +1,477 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>常用网站</title>
+    <title>导航网页</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
     <style>
-        ul {
-            padding: 0;
-            border-bottom: 1px solid #eee;
+        :root {
+            --primary-color: #4e6ef2;
+            --primary-light: #e8f0fe;
+            --bg-body: #f1f3f6;
+            --bg-card: #ffffff;
+            --text-main: #333333;
+            --text-muted: #888888;
+            --border-radius: 10px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --gap: 20px;
+            --card-border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
-        li {
-            color: black;
-            display: inline;
-            margin-left: 8px;
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #6c8aff;
+                --primary-light: rgba(108, 138, 255, 0.1);
+                --bg-body: #0d1117;
+                --bg-card: #161b22;
+                --text-main: #e6edf3;
+                --text-muted: #8b949e;
+                --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+                --card-border: 1px solid #30363d;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding: 40px 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         a {
             text-decoration: none;
+            color: inherit;
         }
 
-        a:link,
-        a:active {
-            color: #0078cc;
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        a:hover {
-            color: #333;
-            background-color: #ccc;
+        /* Group Styles */
+        .group {
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
 
-        a:visited {
-            color: #AA22FF;
+        .group-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--card-border);
+            border-color: rgba(128, 128, 128, 0.2);
+        }
+
+        .group-icon {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .group-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Grid Styles */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--gap);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            border: var(--card-border);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hover Animation & 3D Effect */
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+            z-index: 2;
+        }
+
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #fff;
+            padding: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-main);
+            margin-bottom: 3px;
+        }
+
+        .card-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         footer {
-            height: 80vh;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <ul>
-            <li><a href="https://via.hypothes.is/https://www.google.co.jp/">常用搜索</a></li>
-            <li>
-                <a href="https://www.google.com/">Google</a>&ensp;
-                <a href="https://ipv6.google.co.jp/">ipv6</a>&ensp;
-                <a href="https://www.google.co.jp/">jp</a>
-            </li>
-            <li>
-                <a href="https://proxyium.com/">镜像</a>
-                <a href="https://cloudflareworkers.com/#12a9195720fe4ed660949efdbd9c0219:https://www.google.co.jp/">1</a>
-                <a href="https://proxy.functionapi.workers.dev/">2</a>
-                <!-- <a href="https://proxy.justyy.com/-----https://www.google.com/">3</a> -->
-            </li>
-            <li><a href="https://duckduckgo.com/">DuckGo</a></li>
-            <li><a href="https://global.bing.com/?setlang=en-us&setmkt=en-us&ensearch=1">Bing</a></li>
-            <li><a href="https://chatgpt.com/?hints=search">ChatGPT</a></li>
-            <li><a href="https://search.luxirty.com/">Luxirty</a></li>
-            <!-- <li><a href="https://www.qwant.com/">Qwant</a></li> -->
-            <li><a href="https://kagi.com/">Kagi</a></li>
-            <li><a href="https://www.baidu.com/">百度</a></li>
-            <li><a href="https://www.yandex.com">Yandex</a></li>
-            <li><a href="https://www.wolframalpha.com/">Wolfram</a></li>
-            <li><a href="https://octave-online.net">Octave</a></li>
-            <li><a href="https://www.sagemath.org">SageMath</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li><a href="https://llm-stats.com/">人工智能</a></li>
-            <li><a href="https://chatgpt.com/">ChatGPT</a></li>
-            <li><a href="https://gemini.google.com/">Gemini</a></li>
-            <li><a href="https://grok.com/">Grok</a></li>
-            <li><a href="https://claude.ai/">Claude</a></li>
-            <li><a href="https://copilot.microsoft.com/">Copilot</a></li>
-            <li><a href="https://devv.ai/">Devv</a></li>
-            <li><a href="https://duck.ai">Duck</a></li>
-            <li><a href="https://www.perplexity.ai/">Perplexity</a></li>
-            <li><a href="https://felo.ai/">Felo</a></li>
-            <li><a href="https://openrouter.ai/chat">OpenRouter</a></li>
-            <!-- <li><a href="https://www.phind.com/">Phind</a></li> -->
-            <!-- <li><a href="https://www.pizzagpt.it/">PizzaGPT</a></li> -->
-            <!-- <li><a href="https://consensus.app/">Consensus</a></li> -->
-            <li><a href="https://chat.deepseek.com">DeepSeek</a></li>
-            <li><a href="https://chat.qwen.ai/">Qwen</a></li>
-            <li><a href="https://www.doubao.com/chat/">豆包</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li>新闻财经</li>
-            <li><a href="http://www.news.cn/">新华</a></li>
-            <li><a href="https://news.163.com/">网易</a></li>
-            <li><a href="https://news.sina.com.cn/">新浪</a></li>
-            <li><a href="https://s.weibo.com/top/summary?cate=realtimehot">微博</a></li>
-            <li><a href="https://www.douyin.com/hot">抖音</a></li>
-            <!-- <li><a href="https://bbs.hupu.com/all-gambia">虎扑</a></li> -->
-            <!-- <a href="https://rebang.today/">热榜</a> -->
-            <li><a href="https://tophub.today/">热</a><a href="https://smzdk.top/">榜</a></li>
-            <!-- <li><a href="https://techurls.com/">聚合</a></li> -->
-            <li><a href="https://cn.nytimes.com">纽时</a></li>
-            <li><a href="https://cn.wsj.com/">华尔街</a></li>
-            <li><a href="https://www.ftchinese.com/">FT</a></li>
-            <li><a href="https://www.caixin.com/">财新</a></li>
-            <li><a href="https://www.eastmoney.com/">财富</a> <a href="https://data.eastmoney.com/zjlx/">1</a></li>
-            <li></li>
-            <li><a href="https://www.gelonghui.com/live/">格隆汇</a></li>
-            <li><a href="https://xueqiu.com">雪球</a></li>
-            <li><a href="https://www.boc.cn/sourcedb/whpj/">外汇</a></li>
-            <li><a href="https://www.boc.cn/jp/bocinfo/bi3/">利率</a></li>
-            <li><a href="https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/frame_acgold_index_out.jsp">黄金</a></li>
-            <!-- <li><a href="https://lu1.ccb.com/chn/home/gjs_sp/scxq/index.shtml">黄金</a></li> -->
-            <!-- <li><a href="https://www.sge.com.cn/sjzx/mrhq">黄金</a></li> -->
-            <li><a href="https://www.coindesk.com/price/bitcoin/">Bit</a></li>
-            <li><a href="https://cn.tradingview.com/chart/">TV</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li>电子商务</li>
-            <li><a href="https://mobile.pinduoduo.com/">拼多多</a></li>
-            <!-- <li><a href="https://www.pinduoduo.com/">拼多多</a></li> -->
-            <li><a href="https://www.taobao.com">淘宝</a></li>
-            <li><a href="https://www.tmall.com">天猫</a></li>
-            <li><a href="https://www.jd.com/">京东</a></li>
-            <li><a href="https://shopee.com/">蝦皮</a></li>
-            <li><a href="https://www.uniqlo.cn/">优衣</a></li>
-            <li><a href="https://www.muji.com.cn/">无印</a></li>
-            <li><a href="https://www.smzdm.com/">值得</a></li>
-            <li><a href="https://bbs.gter.net/forum-53-1.html">寄托</a></li>
-            <li><a href="https://www.1point3acres.com/bbs/">三分地</a></li>
-            <li><a href="https://www.amazon.com">Amazon</a></li>
-            <li><a href="https://www.ebay.com">eBay</a></li>
-            <li><a href="https://www.bestbuy.com/?intl=nosplash">bestbuy</a></li>
-            <li><a href="https://www.walmart.com">WalMart</a></li>
-            <li><a href="https://www.macys.com/">macys</a></li>
-            <li><a href="https://www.6pm.com">6pm</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li>聊天邮箱</li>
-            <li><a href="https://x.com/" style="font-weight: bolder;">X</a></li>
-            <li><a href="https://www.facebook.com/">Facebook</a></li>
-            <li><a href="https://web.telegram.org">Telegram</a></li>
-            <li><a href="https://voice.google.com/">GVoice</a></li>
-            <li><a href="https://teams.live.com/">Teams</a></li>
-            <li><a href="https://w.qq.com">QQ</a></li>
-            <li><a href="https://wx.qq.com">微信</a></li>
-            <li><a href="https://proton.me/mail">Proton</a></li>
-            <li><a href="https://tuta.com/">Tuta</a></li>
-            <li><a href="https://gmail.com/">Gmail</a></li>
-            <li><a href="https://outlook.com/">Outlook</a></li>
-            <li><a href="https://login.live.com">Live/MSN</a></li>
-            <li><a href="https://www.icloud.com">iCloud</a></li>
-            <li><a href="https://mail.qq.com/">QQ</a></li>
-            <li><a href="https://mail.163.com/">163</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li><a href="https://www.yangshipin.cn/tv/home">影视</a>广播</li>
-            <li><a href="https://tv.cctv.com/live/">CCTV</a></li>
-            <!-- <li><a href="https://tv.cctv.com/live/index.shtml">CCTV</a></li> -->
-            <li><a href="https://live.jstv.com/">江苏</a></li>
-            <li><a href="https://live.mgtv.com/">芒果</a></li>
-            <li><a href="https://www.iqiyi.com">奇艺</a></li>
-            <li><a href="https://v.qq.com/index.html">QQ</a></li>
-            <li><a href="https://www.youku.com">优酷</a></li>
-            <li><a href="https://www.bilibili.com/">哔哩</a></li>
-            <li><a href="https://live.douyin.com/">抖音</a></li>
-            <li><a href="https://www.netflix.com/">Netflix</a></li>
-            <li><a href="https://www.youtube.com/">Youtube</a></li>
-            <li><a href="https://music.youtube.com/">Music</a></li>
-            <li><a href="https://music.163.com">网易</a></li>
-            <li><a href="https://music.91q.com/">千千</a></li>
-            <li><a href="https://www.jiachangdushu.com/">家常</a></li>
-            <li><a href="https://www.ximalaya.com/">喜马</a></li>
-            <li><a href="https://www.qingting.fm/">蜻蜓</a></li>
-            <!-- <li><a href="https://www.dedao.cn/">得到</a></li> -->
-            <li>
-                <a href="https://daga.cc/">V</a>
-                <a href="https://vip.xilibo.com/">1</a>
-                <a href="https://bbs.wwttl.com/">2</a>
-                <a href="https://vip.yeyulingfeng.com/">3</a>
-            </li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li>生活文化</li>
-            <li><a href="https://www.xiachufang.com">下厨房</a></li>
-            <li><a href="https://www.douguo.com/">豆果</a></li>
-            <li><a href="http://www.weather.com.cn/html/weather/101250101.shtml">天</a><a
-                    href="https://weather.cma.cn/web/weather/57679">气</a></li>
-            <li><a href="https://air.cnemc.cn:18014/">污</a><a
-                 href="https://aqicn.org/city/changsha/cn/">染</a></li>
-            <li><a href="https://www.google.com/maps/">地图</a></li>
-            <!-- <li><a href="https://www.openstreetmap.org/">openstreetmap</a></li> -->
-            <li><a href="https://map.baidu.com/">百度</a></li>
-            <li><a href="https://www.amap.com/">高德</a></li>
-            <li><a href="https://translate.google.com/?hl=zh-CN">翻译</a></li>
-            <li><a href="https://www.deepl.com/translator">DeepL</a></li>
-            <li><a href="https://www.bing.com/translator/">Bing</a></li>
-            <li><a href="https://www.merriam-webster.com/">Merriam</a></li>
-            <li><a href="https://dictionary.cambridge.org">Cambridge</a></li>
-            <li><a href="https://dict.youdao.com">有道</a></li>
-            <!-- <li><a href="https://dict.eudic.net/">欧路</a></li> -->
-            <li><a href="https://www.zdic.net/">汉典</a></li>
-            <li><a href="https://www.cody.md/">问</a><a href="https://medisearch.io/zh">诊</a></li>
-            <li><a href="https://dxy.com/">丁香</a></li>
-            <!-- <li><a href="https://www.uptodate.com/">uptodate</a></li> -->
-            <!-- <li><a href="https://www.findzebra.com/">findzebra</a></li> -->
-            <!-- <li><a href="https://www.docti.ai/">Docti.ai</a></li> -->
-            <!-- <li><a href="https://www.drugs.com/search/ai/">uptodate</a></li> -->
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li>百科学术</li>
-            <li><a href="https://en.wikipedia.org/">Wiki</a></li>
-            <li><a href="https://teknopedia.teknokrat.ac.id/">2</a></li>
-            <li><a href="https://zh.wikipedia.org/">维基</a></li>
-            <li><a href="https://kfd.me/">2</a></li>
-            <li><a href="https://www.britannica.com">大英</a></li>
-            <!-- <li><a href="https://www.encyclopedia.com">百科</a></li> -->
-            <!--<li><a href="https://www.bartleby.com">哥伦比亚</a></li>-->
-            <li><a href="https://www.v2ex.com">V2EX</a></li>
-            <li><a href="https://linux.do/">Lin</a></li>
-            <li><a href="https://www.xiaohongshu.com/explore">小红书</a></li>
-            <li><a href="https://www.zhihu.com/billboard">知乎</a></li>
-            <li><a href="https://www.douban.com">豆瓣</a></li>
-            <li><a href="https://neodb.social/discover/">Neo</a></li>
-            <!-- <li><a href="https://letterboxd.com/">Letterboxd</a></li> -->
-            <!-- <li><a href="https://trakt.tv/">Trakt</a></li> -->
-            <li><a href="https://www.goodreads.com">reads</a></li>
-            <li><a href="https://scholar.google.com/?hl=zh-CN">scholar</a></li>
-            <li><a href="https://www.semanticscholar.org/">Semantic</a></li>
-            <li><a href="https://patents.google.com/">Patents</a></li>
-            <li><a href="https://www.sci-hub.pub/">scihub</a></li>
-            <li><a href="https://www.webofknowledge.com/">Wo</a><a href="https://mjl.clarivate.com/home">S</a></li>
-            <li><a href="https://z-library.co/">ZLib</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li><a href="https://webnavigate.github.io/Software.html">手机电脑</a></li>
-            <li><a href="https://www.423down.com/">Down</a></li>
-            <!-- <li><a href="https://www.downg.com/">绿色</a></li> -->
-            <li><a href="https://www.52pojie.cn/forum-16-1.html">吾爱</a></li>
-            <li><a href="https://bbs.kafan.cn">卡饭</a></li>
-            <li><a href="https://bbs.pcbeta.com">远景</a></li>
-            <li><a href="https://bbs.eastgame.org/">TLF</a></li>
-            <li><a href="https://duokan.club/forum.php">国</a><a href="https://a5dy.com/forum.php">配</a></li>
-            <!-- <li><a href="https://club.ccmnn.com/">国</a><a href="https://www.mmybt.com/">配</a><a href="https://www.normteam.com/forum.php">3</a></li> -->
-            <li><a href="https://www.chiphell.com/forum.php">硬件</a></li>
-            <li><a href="https://www.virustotal.com">杀</a><a href="https://virusscan.jotti.org/en">毒</a></li>
-            <li><a href="https://easychuan.cn/">快</a><a href="https://www.wenshushu.cn/">传</a></li>
-            <li><a href="https://send.vis.ee/">Go</a><a href="https://gofile.io/">fi</a><a href="https://streamshare.wireway.ch/">le</a></li>
-            <li><a href="https://www.alipan.com/">阿</a><a href="https://pan.quark.cn/">里</a></li>
-            <li><a href="https://www.123pan.com">123</a></li>
-            <li><a href="https://pan.baidu.com">百度</a></li>
-            <li><a href="https://www.lanzou.com/">蓝奏</a></li>
-            <li><a href="https://mypikpak.com/">PikPak</a></li>
-            <li><a href="https://drive.google.com/">Google</a></li>
-            <li><a href="https://onedrive.live.com">OneDrive</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li>知识学习</li>
-            <li><a href="https://www.nationalgeographic.com/">NG</a></li>
-            <li><a href="https://www.scientificamerican.com">SA</a></li>
-            <li><a href="https://www.npr.org">NPR</a></li>
-            <li><a href="https://www.pri.org">PRI</a></li>
-            <li><a href="https://www.economist.com/">Economist</a></li>
-            <li><a href="https://www.businessinsider.nl/">BI</a></li>
-            <li><a href="https://www.sparknotes.com/sparknotes/">spark</a></li>
-            <li><a href="https://learningenglish.voanews.com">VOA</a></li>
-            <li><a href="https://www.bbc.co.uk/radio">BBC</a></li>
-            <li><a href="https://edition.cnn.com/videos/">CNN</a></li>
-            <li><a href="https://github.com/explore">GitHub</a></li>
-            <li><a href="https://bitbucket.org">Bitbucket</a></li>
-            <li><a href="https://stackoverflow.com">StackOverflow</a></li>
-            <li><a href="https://segmentfault.com">SegmentFault</a></li>
-            <li><a href="https://www.csdn.net">C</a></li>
-        </ul>
-    </div>
+    <div class="container" id="app"></div>
 
-    <footer></footer>
+    <footer>
+        <p>© 2026 WebNavigate</p>
+    </footer>
+
+    <script>
+        // 配置数据：在此处修改、添加链接
+        const navData = [
+            {
+                category: "常用搜索",
+                icon: "fas fa-star",
+                items: [
+                    { title: "Google", desc: "Global Search", url: "https://www.google.com/" },
+                    { title: "Google IPv6", desc: "IPv6 Access", url: "https://ipv6.google.co.jp/" },
+                    { title: "DuckDuckGo", desc: "Privacy Search", url: "https://duckduckgo.com/" },
+                    { title: "Kagi", desc: "Premium Search", url: "https://kagi.com/" },
+                    { title: "Bing Global", desc: "必应", url: "https://global.bing.com/?setlang=en-us&setmkt=en-us&ensearch=1" },
+                    { title: "Yahoo", desc: "Search & News", url: "https://www.yahoo.com/" },
+                    { title: "Yandex", desc: "Russian Search", url: "https://www.yandex.com" },
+                    { title: "百度", desc: "中文搜索", url: "https://www.baidu.com/" },
+                    { title: "ChatGPT", desc: "OpenAI", url: "https://chatgpt.com/" },
+                    { title: "Luxirty", desc: "Search Engine", url: "https://search.luxirty.com/" },
+                    { title: "WolframAlpha", desc: "Computational", url: "https://www.wolframalpha.com/" },
+                    { title: "Octave", desc: "Online Matlab", url: "https://octave-online.net" },
+                    // { title: "SageMath", desc: "Math Software", url: "https://www.sagemath.org" }
+                    // { title: "Google", desc: "Global Search", url: "https://via.hypothes.is/https://www.google.co.jp/" },
+                    // { title: "Proxyium", desc: "Web Proxy", url: "https://proxyium.com/" },
+                ]
+            },
+            {
+                category: "人工智能",
+                icon: "fas fa-robot",
+                items: [
+                    { title: "ChatGPT", desc: "OpenAI", url: "https://chatgpt.com/" },
+                    { title: "Gemini", desc: "Google AI", url: "https://gemini.google.com/" },
+                    { title: "Grok", desc: "xAI", url: "https://grok.com/" },
+                    { title: "Claude", desc: "Anthropic", url: "https://claude.ai/" },
+                    { title: "Copilot", desc: "Microsoft", url: "https://copilot.microsoft.com/" },
+                    { title: "Duck.ai", desc: "DuckDuckGo", url: "https://duck.ai" },
+                    { title: "Perplexity", desc: "AI Search", url: "https://www.perplexity.ai/" },
+                    { title: "You.com", desc: "Search", url: "https://you.com/" },
+                    { title: "Felo", desc: "Japanese AI", url: "https://felo.ai/" },
+                    { title: "OpenRouter", desc: "Router", url: "https://openrouter.ai/chat" },
+                    { title: "DeepSeek", desc: "深度求索", url: "https://chat.deepseek.com" },
+                    { title: "Qwen", desc: "通义千问", url: "https://chat.qwen.ai/" },
+                    { title: "Doubao", desc: "豆包", url: "https://www.doubao.com/chat/" },
+                    { title: "LLM Stats", desc: "Analytics", url: "https://llm-stats.com/" },
+                    { title: "Artificial Analysis", desc: "AI Benchmarks", url: "https://artificialanalysis.ai/" },
+                ]
+            },
+            {
+                category: "新闻财经",
+                icon: "fas fa-newspaper",
+                items: [
+                    { title: "新华网", desc: "Xinhua", url: "http://www.news.cn/" },
+                    { title: "网易新闻", desc: "NetEase", url: "https://news.163.com/" },
+                    { title: "新浪新闻", desc: "Sina", url: "https://news.sina.com.cn/" },
+                    { title: "微博热搜", desc: "Weibo Hot", url: "https://s.weibo.com/top/summary?cate=realtimehot" },
+                    { title: "抖音热榜", desc: "Douyin", url: "https://www.douyin.com/hot" },
+                    { title: "今日热榜", desc: "TopHub", url: "https://tophub.today/" },
+                    { title: "NYTimes", desc: "纽约时报", url: "https://cn.nytimes.com" },
+                    { title: "WSJ", desc: "华尔街日报", url: "https://cn.wsj.com/" },
+                    { title: "FT中文", desc: "Financial Times", url: "https://www.ftchinese.com/" },
+                    { title: "财新", desc: "Caixin", url: "https://www.caixin.com/" },
+                    { title: "格隆汇", desc: "Finance", url: "https://www.gelonghui.com/live/" },
+                    { title: "同花顺", desc: "Stock News", url: "https://news.10jqka.com.cn/realtimenews.html" },
+                    { title: "雪球", desc: "Investors", url: "https://xueqiu.com" },
+                    { title: "东方财富", desc: "EastMoney", url: "https://www.eastmoney.com/" },
+                    { title: "中行外汇", desc: "Forex Rates", url: "https://www.boc.cn/sourcedb/whpj/" },
+                    { title: "工行黄金", desc: "Gold Price", url: "https://mybank.icbc.com.cn/icbc/newperbank/perbank3/gold/frame_acgold_index_out.jsp" },
+                    { title: "CoinDesk", desc: "比特币", url: "https://www.coindesk.com/price/bitcoin/" },
+                    { title: "TradingView", desc: "交易图表", url: "https://cn.tradingview.com/chart/" }
+                ]
+            },
+            {
+                category: "电子商务",
+                icon: "fas fa-shopping-cart",
+                items: [
+                    { title: "淘宝", desc: "Taobao", url: "https://www.taobao.com" },
+                    { title: "天猫", desc: "Tmall", url: "https://www.tmall.com" },
+                    { title: "京东", desc: "JD.com", url: "https://www.jd.com/" },
+                    { title: "拼多多", desc: "Pinduoduo", url: "https://mobile.pinduoduo.com/" },
+                    { title: "Shopee", desc: "虾皮", url: "https://shopee.com/" },
+                    { title: "优衣库", desc: "Uniqlo", url: "https://www.uniqlo.cn/" },
+                    { title: "无印良品", desc: "MUJI", url: "https://www.muji.com.cn/" },
+                    { title: "什么值得买", desc: "SMZDM", url: "https://www.smzdm.com/" },
+                    { title: "Amazon", desc: "亚马逊", url: "https://www.amazon.com" },
+                    { title: "eBay", desc: "易贝", url: "https://www.ebay.com" },
+                    { title: "BestBuy", desc: "Electronics", url: "https://www.bestbuy.com/?intl=nosplash" },
+                    { title: "WalMart", desc: "沃尔玛", url: "https://www.walmart.com" },
+                    { title: "Macy's", desc: "梅西百货", url: "https://www.macys.com/" },
+                    { title: "6pm", desc: "Discount Shoes", url: "https://www.6pm.com" }
+                ]
+            },
+            {
+                category: "聊天邮箱",
+                icon: "fas fa-comments",
+                items: [
+                    { title: "X", desc: "Twitter", url: "https://x.com/" },
+                    { title: "Facebook", desc: "Social", url: "https://www.facebook.com/" },
+                    { title: "Telegram", desc: "Chat", url: "https://web.telegram.org" },
+                    { title: "Google Voice", desc: "VoIP", url: "https://voice.google.com/" },
+                    { title: "Teams", desc: "Microsoft", url: "https://teams.live.com/" },
+                    { title: "QQ", desc: "Tencent", url: "https://im.qq.com/" },
+                    { title: "微信", desc: "微信网页版", url: "https://wx.qq.com" },
+                    { title: "Proton", desc: "Secure Mail", url: "https://proton.me/mail" },
+                    { title: "Tuta", desc: "Secure Mail", url: "https://tuta.com/" },
+                    { title: "Gmail", desc: "Google Mail", url: "https://gmail.com/" },
+                    { title: "Outlook", desc: "Microsoft Mail", url: "https://outlook.com/" },
+                    // { title: "Live/MSN", desc: "Microsoft", url: "https://login.live.com" },
+                    { title: "iCloud", desc: "Apple", url: "https://www.icloud.com" },
+                    { title: "QQ邮箱", desc: "QQ Mail", url: "https://mail.qq.com/" },
+                    { title: "网易邮箱", desc: "163 Mail", url: "https://mail.163.com/" }
+                ]
+            },
+            {
+                category: "影视广播",
+                icon: "fas fa-video",
+                items: [
+                    { title: "CCTV", desc: "Live TV", url: "https://tv.cctv.com/live/" },
+                    { title: "江苏卫视", desc: "Jiangsu TV", url: "https://live.jstv.com/" },
+                    { title: "芒果TV", desc: "Mango TV", url: "https://live.mgtv.com/" },
+                    { title: "爱奇艺", desc: "iQiyi", url: "https://www.iqiyi.com" },
+                    { title: "腾讯视频", desc: "Tencent Video", url: "https://v.qq.com/index.html" },
+                    { title: "优酷", desc: "Youku", url: "https://www.youku.com" },
+                    { title: "哔哩哔哩", desc: "Bilibili", url: "https://www.bilibili.com/" },
+                    { title: "抖音直播", desc: "Douyin Live", url: "https://live.douyin.com/" },
+                    { title: "Netflix", desc: "Streaming", url: "https://www.netflix.com/" },
+                    { title: "Youtube", desc: "Video", url: "https://www.youtube.com/" },
+                    { title: "YT Music", desc: "Music", url: "https://music.youtube.com/" },
+                    { title: "网易云音乐", desc: "Music", url: "https://music.163.com" },
+                    { title: "千千音乐", desc: "Music", url: "https://music.91q.com/" },
+                    { title: "家常读书", desc: "Reading", url: "https://www.jiachangdushu.com/" },
+                    { title: "喜马拉雅", desc: "Audiobook", url: "https://www.ximalaya.com/" },
+                    { title: "蜻蜓FM", desc: "Radio", url: "https://www.qingting.fm/" },
+                    { title: "Vip", desc: "Resource", url: "https://daga.cc/" },
+                    { title: "Vip2", desc: "Resource", url: "https://vip.xilibo.com/" },
+                    { title: "Vip3", desc: "Resource", url: "https://vip.yeyulingfeng.com/" }
+                ]
+            },
+            {
+                category: "生活文化",
+                icon: "fas fa-coffee",
+                items: [
+                    { title: "下厨房", desc: "Cooking", url: "https://www.xiachufang.com" },
+                    { title: "豆果美食", desc: "Cooking", url: "https://www.douguo.com/" },
+                    { title: "中国天气", desc: "Weather", url: "https://www.weather.com.cn/forecast/" },
+                    // { title: "气象局", desc: "Weather", url: "https://weather.cma.cn/" },
+                    { title: "空气质量", desc: "Air Quality", url: "https://air.cnemc.cn:18014/" },
+                    // { title: "空气污染", desc: "Air Quality", url: "https://aqicn.org//here/cn/" },
+                    { title: "Google Maps", desc: "Map", url: "https://www.google.com/maps/" },
+                    { title: "百度地图", desc: "Map", url: "https://map.baidu.com/" },
+                    { title: "高德地图", desc: "Map", url: "https://www.amap.com/" },
+                    { title: "Google 翻译", desc: "Translate", url: "https://translate.google.com/" },
+                    { title: "DeepL", desc: "AI Translate", url: "https://www.deepl.com/translator" },
+                    { title: "Bing 翻译", desc: "Translate", url: "https://www.bing.com/translator/" },
+                    { title: "Merriam-Webster", desc: "Dictionary", url: "https://www.merriam-webster.com/" },
+                    { title: "Cambridge", desc: "Dictionary", url: "https://dictionary.cambridge.org" },
+                    { title: "有道词典", desc: "Dictionary", url: "https://dict.youdao.com" },
+                    { title: "汉典", desc: "Chinese Dict", url: "https://www.zdic.net/" },
+                    // { title: "Cody", desc: "Medical AI", url: "https://www.cody.md/" },
+                    // { title: "MediSearch", desc: "Medical Search", url: "https://medisearch.io/zh" },
+                    { title: "丁香园", desc: "Medical Comm", url: "https://dxy.com/" }
+                ]
+            },
+            {
+                category: "百科学术",
+                icon: "fas fa-graduation-cap",
+                items: [
+                    { title: "Wikipedia", desc: "English", url: "https://en.wikipedia.org/" },
+                    { title: "维基百科", desc: "中文", url: "https://zh.wikipedia.org/" },
+                    { title: "KFD.ME", desc: "Blog", url: "https://kfd.me/" },
+                    { title: "Britannica", desc: "Encyclopedia", url: "https://www.britannica.com" },
+                    { title: "V2EX", desc: "Tech Community", url: "https://www.v2ex.com" },
+                    { title: "Linux.do", desc: "Tech Forum", url: "https://linux.do/" },
+                    { title: "小红书", desc: "Lifestyle", url: "https://www.xiaohongshu.com/explore" },
+                    { title: "知乎热榜", desc: "Q&A", url: "https://www.zhihu.com/billboard" },
+                    { title: "豆瓣", desc: "Books & Movies", url: "https://www.douban.com" },
+                    { title: "NeoDB", desc: "Database", url: "https://neodb.social/discover/" },
+                    { title: "Goodreads", desc: "Book Review", url: "https://www.goodreads.com" },
+                    { title: "Scholar", desc: "Academic", url: "https://scholar.google.com/" },
+                    { title: "Semantic", desc: "Academic", url: "https://www.semanticscholar.org/" },
+                    { title: "Patents", desc: "Patents", url: "https://patents.google.com/" },
+                    { title: "Sci-Hub", desc: "Papers", url: "https://www.sci-hub.pub/" },
+                    { title: "WebOfScience", desc: "Research", url: "https://www.webofknowledge.com/" },
+                    { title: "Z-Library", desc: "E-Books", url: "https://z-library.co/" }
+                ]
+            },
+            {
+                category: "<a href='https://webnavigate.github.io/Software.html' target='_blank'>手机电脑</a>",
+                icon: "fas fa-laptop-code",
+                items: [
+                    { title: "423Down", desc: "Software", url: "https://www.423down.com/" },
+                    { title: "吾爱破解", desc: "Software Forum", url: "https://www.52pojie.cn/" },
+                    { title: "远景论坛", desc: "Software Forum", url: "https://bbs.pcbeta.com/" },
+                    // { title: "卡饭论坛", desc: "杀毒论坛", url: "https://www.v2ex.com" },
+                    { title: "TLF", desc: "电影论坛", url: "https://bbs.eastgame.org/" },
+                    { title: "多看聚影", desc: "国配影视", url: "https://duokan.club/forum.php" },
+                    { title: "A5电影", desc: "国配影视", url: "https://a5dy.com/forum.php" },
+                    // { title: "Chiphell", desc: "硬件论坛", url: "https://www.chiphell.com/forum.php" },
+                    { title: "VirusTotal", desc: "在线杀毒", url: "https://www.virustotal.com/gui/home/upload" },
+                    { title: "Jotti's", desc: "在线杀毒", url: "https://virusscan.jotti.org/en" },
+                    { title: "钛盘", desc: "临时文件分享", url: "https://www.tmp.link/" },
+                    { title: "文叔叔", desc: "临时文件分享", url: "https://www.wenshushu.cn/" },
+                    { title: "Send", desc: "安全文件分享", url: "https://send.vis.ee/" },
+                    { title: "Gofile", desc: "安全文件分享", url: "https://gofile.io/" },
+                    // { title: "Streamshare", desc: "临时文件分享", url: "https://streamshare.wireway.ch/" },
+                    { title: "百度网盘", desc: "Cloud", url: "https://pan.baidu.com" },
+                    // { title: "阿里云盘", desc: "Cloud", url: "https://www.alipan.com/" },
+                    { title: "夸克网盘", desc: "Cloud", url: "https://pan.quark.cn/" },
+                    { title: "123云盘", desc: "Cloud", url: "https://www.123pan.com/" },
+                    { title: "蓝奏云", desc: "File Share", url: "https://www.lanzou.com/" },
+                    // { title: "PikPak", desc: "Cloud", url: "https://mypikpak.com/" },
+                    { title: "Google Drive", desc: "Cloud", url: "https://drive.google.com/" },
+                    { title: "OneDrive", desc: "Cloud", url: "https://onedrive.live.com/" }
+                ]
+            },
+            {
+                category: "知识学习",
+                icon: "fas fa-book-open",
+                items: [
+                    { title: "National Geographic", desc: "国家地理", url: "https://www.nationalgeographic.com/" },
+                    { title: "Scientific American", desc: "科学美国人", url: "https://www.scientificamerican.com" },
+                    { title: "The Economist", desc: "经济学人", url: "https://www.economist.com/" },
+                    { title: "Financial Times", desc: "金融时报", url: "https://www.ft.com/" },
+                    { title: "Business Insider", desc: "商业内幕", url: "https://www.businessinsider.com/" },
+                    { title: "NPR", desc: "美国国家公共电台", url: "https://www.npr.org/" },
+                    { title: "BBC Radio", desc: "BBC广播电台", url: "https://www.bbc.co.uk/radio" },
+                    { title: "Learning English", desc: "VOA Learning English", url: "https://learningenglish.voanews.com/" },
+                    { title: "SparkNotes", desc: "学习指南", url: "https://www.sparknotes.com/" },
+                    { title: "寄托天下", desc: "留学论坛", url: "https://bbs.gter.net/forum-53-1.html" },
+                    { title: "一亩三分地", desc: "海外论坛", url: "https://www.1point3acres.com/bbs/" },
+                    { title: "GitHub", desc: "代码托管", url: "https://github.com/explore" },
+                    { title: "Bitbucket", desc: "代码托管", url: "https://bitbucket.org/" },
+                    { title: "StackOverflow", desc: "开发问答", url: "https://stackoverflow.com" },
+                    { title: "SegmentFault", desc: "开发问答", url: "https://segmentfault.com/" },
+                ]
+            }
+        ];
+
+        // 渲染函数
+        function renderNav() {
+            const app = document.getElementById('app');
+            let html = '';
+
+            navData.forEach((group, index) => {
+                // 动画延迟
+                const delay = index * 0.1;
+
+                // 开启组 div
+                html += `<div class="group" style="animation-delay: ${delay}s">`;
+
+                // 组标题
+                html += `
+                    <div class="group-header">
+                        <i class="${group.icon} group-icon"></i>
+                        <h2 class="group-title">${group.category}</h2>
+                    </div>
+                `;
+
+                // Grid 容器
+                html += `<div class="grid">`;
+
+                // 遍历 Items
+                group.items.forEach(item => {
+                    // 获取 Domain 用于 Favicon
+                    let domain = '';
+                    try {
+                        domain = new URL(item.url).hostname;
+                    } catch (e) {
+                        domain = 'google.com';
+                    }
+
+                    html += `
+                        <a href="${item.url}" class="card" target="_blank">
+                            <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" class="card-icon" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=64'">
+                            <div class="card-body">
+                                <div class="card-title">${item.title}</div>
+                                <div class="card-desc">${item.desc}</div>
+                            </div>
+                        </a>
+                    `;
+                });
+
+                // 关闭 Grid 和 Group
+                html += `</div></div>`;
+            });
+
+            app.innerHTML = html;
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', renderNav);
+
+    </script>
 </body>
 
 </html>
