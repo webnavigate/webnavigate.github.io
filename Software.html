@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常用软件下载</title>
     <style>
-        #notes {
-            font-size: 1.25rem;
-            color: #333;
-            border-bottom: 1px solid #000;
+        body {
+            background-color: #0a0a0a;
+            /* Deep, rich black */
+            color: #e0e0e0;
+            /* Off-white text */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
         }
 
-        #topTitle {
-            font-weight: bolder;
-            border-bottom: 1px solid #000;
-            border-top: 1px solid #000;
-        }
-
-        section {
-            border-bottom: 1px solid #ddd;
-        }
-
-        section:hover {
-            background-color: lightgoldenrodyellow;
+        a {
+            text-decoration-color: #3f353f;
+            color: #efd5ef;
+            /* text-decoration: none;
+            color: #00e5ff; */
+            /* Neon Cyan - Extremely prominent */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         a:hover {
-            background-color: gold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.4);
+            transform: translateY(-1px);
         }
 
+        #notes {
+            font-size: 1.1rem;
+            color: #9e9e9e;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        #topTitle {
+            font-weight: 700;
+            border-bottom: 1px solid #333;
+            border-top: 1px solid #333;
+            background-color: #111;
+            padding: 12px 0;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        section {
+            border-bottom: 1px solid #222;
+            padding: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        section:hover {
+            background-color: #141414;
+        }
+
+        /* Layout Classes */
         .space {
             display: inline-block;
             width: 1%;
@@ -40,48 +73,55 @@
             width: 7%;
             overflow: hidden;
             text-align: center;
+            vertical-align: top;
+            font-weight: 700;
+            color: #ffffff;
+            /* Clean White - Modern & Premium */
+            opacity: 0.9;
         }
 
-        .Windows {
-            display: inline-block;
-            width: 29%;
-            overflow: hidden;
-        }
-
-        .Android {
-            display: inline-block;
-            width: 29%;
-            overflow: hidden;
-        }
-
+        .Windows,
+        .Android,
         .Linux {
             display: inline-block;
             width: 29%;
             overflow: hidden;
+            vertical-align: top;
         }
 
         .fee {
-            font-weight: bolder;
-            font-style: italic;
+            font-weight: 600;
+            font-style: normal;
+            /* Remove italic for cleaner look */
+            color: #ffd700;
+            /* Gold - Premium feel for paid */
         }
 
         .cn {
-            font-weight: bolder;
-            color: #333;
+            font-weight: 600;
+            color: #ff6d00;
+            /* Deep Orange - High contrast, distinct */
         }
     </style>
 </head>
+
 <body>
     <div id="notes">
-        1. 为防止病毒等传播，本站只提供正版软件的官方下载，其中用 <strong>粗斜体</strong> 标记的为收费软件，<strong>黑色粗体</strong> 标记的为国产软件，下载和使用时请遵循相关法律，切勿盗版！
+        1. 为防止病毒等传播，本站只提供正版软件的官方下载，下载和使用时请遵循相关法律，切勿盗版！
         <br>
-        2. 为保证安全，下载的软件请先查杀病毒后再使用。请每次开机时升级杀毒软件和防火墙，每月的第二个星期三升级 Windows 系统。
+        2. 其中用 <strong>纯金色</strong> 标记的为收费软件，<strong>深橙色</strong> 标记的为国产软件，
         <br>
+        3. 为保证安全，下载的软件请先查杀病毒后再使用。请每次开机时升级杀毒软件和防火墙，每月的第二个星期三升级 Windows 系统。
+        <!-- <br> -->
+        <!-- 3. 热门软件排行网站：<a href="https://gs.statcounter.com/">statcounter</a> / <a href="https://www.netmarketshare.com/">netmarketshare</a> / <a href="https://www.statista.com/">statista</a> / <a href="https://www.similarweb.com/">similarweb</a> / <a href="https://www.producthunt.com/shoutouts?ref=header_nav">producthunt</a> / <a href="https://github.com/sindresorhus/awesome">awesome</a> / <a href="https://www.techradar.com/computing/software/windows">techradar</a> -->
+        <!-- <br> -->
     </div>
     <section id="topTitle">
         <div class="title">软件类型</div>
         <div class="space"></div>
-        <div class="Windows"><a href="https://msdn.itellyou.cn/">Windows</a> <a href="https://msdn.sjjzm.com/win11.html">平台</a> <a href="https://uupdump.net/">UUP</a></div>
+        <div class="Windows"><a href="https://msdn.itellyou.cn/">Windows</a> <a
+                href="https://msdn.sjjzm.com/win11.html">平台</a> <a
+                href="https://massgrave.dev/windows_11_links">massgrave</a> <a href="https://uupdump.net/">UUP</a></div>
         <div class="space"></div>
         <div class="Android">Android 安卓平台</div>
         <div class="space"></div>
@@ -92,25 +132,30 @@
         <div class="title"><a href="https://gs.statcounter.com/os-market-share">操作系统</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.microsoft.com/zh-cn/download">Windows</a> <a class="fee" href="https://www.microsoft.com/zh-cn/software-download/">11</a>/ 
-            <a class="fee" href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2025">Server 2025</a>/ 
+            <a class="fee" href="https://www.microsoft.com/zh-cn/download">Windows</a> <a class="fee"
+                href="https://www.microsoft.com/zh-cn/software-download/">11</a>/
+            <a class="fee" href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2025">Server
+                2025</a>/
             <a href="https://sdi-tool.org/download/">SDI</a> /
-            <a href="https://privacy.sexy/">Sexy</a>/ 
-            <a href="https://github.com/hellzerg/optimizer/releases">Op</a><a href="https://www.oo-software.com/en/shutup10">ti</a>
+            <a href="https://www.oo-software.com/en/shutup10">O&O</a>/
+            <a href="https://github.com/ChrisTitusTech/winutil/releases">win</a><a
+                href="https://github.com/hellzerg/optimizer/releases">u</a>
+            <!-- <a href="https://privacy.sexy/">sexy</a>/  -->
             <!-- <a href="https://wpd.app/">WPD</a>/  -->
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://download.lineageos.org/">LineageOS</a> / 
-            <a href="https://downloads.aospextended.com/">AospExtended</a> / 
-            <a href="https://grapheneos.org/releases">GrapheneOS</a>
+            <a href="https://download.lineageos.org/">LineageOS</a> /
+            <a href="https://grapheneos.org/releases">GrapheneOS</a> /
+            <a href="https://downloads.aospextended.com/">AospExtended</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.kernel.org/">Kernel</a> / 
-            <a href="https://linuxmint.com/download.php">Mint</a> / 
-            <a href="https://manjaro.org/download/">Manjaro</a> / 
-            <a href="https://www.qubes-os.org/downloads/">Qubes</a> / 
+            <a href="https://www.kernel.org/">Kernel</a> /
+            <a href="https://linuxmint.com/download.php">Mint</a> /
+            <a href="https://cachyos.org/download/">CachyOS</a> /
+            <!-- <a href="https://manjaro.org/download/">Manjaro</a> /  -->
+            <a href="https://www.qubes-os.org/downloads/">Qubes</a> /
             <a href="https://tails.net/">Tails</a>
         </div>
     </section>
@@ -119,27 +164,31 @@
         <div class="title"><a href="https://config.office.com/deploymentsettings">Office</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.microsoft.com/en-us/education/products/office">Microsoft365</a>/ 
-            <a class="fee" href="https://www.microsoft.com/en-us/download/details.aspx?id=49117">Odt</a>/ 
-            <a href="https://www.libreoffice.org/download/download/">Libre</a>/ 
-            <a href="https://onedrive.live.com/">在线</a>/ 
-            <a href="https://docs.google.com/">Gdocs</a>
+            <a class="fee" href="https://www.microsoft.com/en-us/microsoft-365/download-office">Microsoft</a><a
+                class="fee" href="https://www.microsoft.com/en-us/education/products/office">365</a>/
+            <a class="fee" href="https://www.microsoft.com/en-us/download/details.aspx?id=49117">Odt</a>/
+            <a href="https://www.libreoffice.org/download/download/">Libre</a>/
+            <a href="https://onedrive.live.com/">在线</a>/
+            <a href="https://workspace.google.com/">Workspace</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://opengapps.org/">GApps</a> / 
-            <a class="fee" href="https://workspace.google.com/">Workspace</a> / 
-            <a href="https://www.microsoft.com/en-us/microsoft-365/mobile/microsoft-365-mobile-apps-for-android">Office</a> / 
-            <a href="https://languagetool.org/">Grammarly</a>
+            <a href="https://opengapps.org/">GApps</a> /
+            <a class="fee" href="https://workspace.google.com/">Workspace</a>/
+            <a
+                href="https://www.microsoft.com/en-us/microsoft-365/mobile/microsoft-365-mobile-apps-for-android">MS365</a>
+            /
+            <a href="https://languagetool.org/">LT</a>/
+            <a class="fee" href="https://www.grammarly.com/">Grammar</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.libreoffice.org/download/download/">Libre</a>/ 
-            <a href="https://www.onlyoffice.com/en/download-desktop.aspx?from=desktop">Only</a> / 
+            <a href="https://www.libreoffice.org/download/download/">Libre</a>/
+            <a href="https://www.onlyoffice.com/en/download-desktop.aspx?from=desktop">Only</a> /
             <!-- <a class="cn" href="https://www.wps.com/">WPS</a>/  -->
             <a href="https://gamma.app/">Gamma</a>/
-            <a class="cn" href="https://github.com/xkonglong/xkonglong.github.io">小恐龙</a>/ 
-            <a class="cn" href="http://www.ffcell.com/home/products.aspx">方方</a>/ 
+            <a class="cn" href="https://github.com/xkonglong/xkonglong.github.io">小恐龙</a>/
+            <a class="cn" href="http://www.ffcell.com/home/products.aspx">方方</a>/
             <a class="cn" href="https://www.officeplus.cn/">Plus</a>/
             <!-- <a class="cn" href="https://www.hbgsoft.com/">慧办公</a>/  -->
             <!-- <a class="cn fee" href="https://www.islide.cc/">iSlide</a>/  -->
@@ -151,16 +200,16 @@
         <div class="title">应用商店</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://apps.microsoft.com/store/apps">Microsoft</a> / 
-            <a href="https://docs.microsoft.com/zh-cn/sysinternals/">Sysinternals</a> / 
-            <a href="https://github.com/microsoft/PowerToys/releases">PowerToys</a> / 
+            <a href="https://apps.microsoft.com/store/apps">Microsoft</a> /
+            <a href="https://docs.microsoft.com/zh-cn/sysinternals/">Sysinternals</a> /
+            <a href="https://github.com/microsoft/PowerToys/releases">PowerToys</a> /
             <a href="https://fluentsearch.net">Fluent</a>
             <!-- <a class="cn" href="https://getquicker.net/Download">Quicker</a> /  -->
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://play.google.com/store">Google Play</a> / 
-            <a href="https://f-droid.org/">F-Droid</a> / 
+            <a href="https://play.google.com/store">Google Play</a> /
+            <a href="https://f-droid.org/">F-Droid</a> /
             <a href="https://apkpure.net/">Apkpure</a>
         </div>
         <div class="space"></div>
@@ -172,12 +221,12 @@
         <div class="title">输入法</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://rime.im/download/">RIME</a> / 
+            <a href="https://rime.im/download/">RIME</a> /
             <a href="https://hyperrate.com/">gcin</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin">Gboard</a> / 
+            <a href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin">Gboard</a> /
             <a href="https://www.microsoft.com/en-us/swiftkey">SwiftKey</a>
         </div>
         <div class="space"></div>
@@ -187,29 +236,30 @@
     </section>
 
     <section>
-        <div class="title"><a href="https://gs.statcounter.com/browser-market-share">浏览</a><a href="https://privacytests.org">器</a></div>
+        <div class="title"><a href="https://gs.statcounter.com/browser-market-share">浏览</a><a
+                href="https://privacytests.org">器</a></div>
         <div class="space"></div>
         <div class="Windows">
             <a href="https://chrome.noki.eu.org/">Chrome</a>
-            <a href="https://www.iplaysoft.com/tools/chrome/">64</a> / 
-            <a href="https://www.mozilla.org/en-US/firefox/all/">Firefox</a> / 
-            <a href="https://www.microsoft.com/en-us/edge/download">Edge</a> / 
+            <a href="https://www.iplaysoft.com/tools/chrome/">64</a> /
+            <a href="https://www.mozilla.org/en-US/firefox/all/">Firefox</a> /
+            <a href="https://www.microsoft.com/en-us/edge/download">Edge</a> /
             <!-- <a href="https://support.microsoft.com/zh-cn/help/18520/download-internet-explorer-11-offline-installer">IE</a> /  -->
-            <a href="https://www.torproject.org/">Tor</a> / 
-            <a href="https://librewolf.net/installation/windows/">LibreWolf</a>
+            <a href="https://www.torproject.org/">Tor</a> /
+            <a href="https://mullvad.net/en/download/browser/windows">Mullvad</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://play.google.com/store/apps/details?id=com.android.chrome">Chrome</a> / 
-            <a href="https://www.mozilla.org/en-US/firefox/all/#product-desktop-release">Firefox</a> / 
-            <a href="https://www.microsoft.com/en-us/edge/download">Edge</a> / 
+            <a href="https://play.google.com/store/apps/details?id=com.android.chrome">Chrome</a> /
+            <a href="https://www.mozilla.org/en-US/firefox/all/#product-desktop-release">Firefox</a> /
+            <a href="https://www.microsoft.com/en-us/edge/download">Edge</a> /
+            <a href="https://www.samsung.com/us/support/owners/app/samsung-internet">Samsung</a> /
             <a href="https://brave.com/download/">Brave</a> /
-            <a href="https://www.samsung.com/us/support/owners/app/samsung-internet">Samsung</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.mozilla.org/en-US/firefox/all/">Firefox</a> / 
-            <a href="https://www.google.com/chrome/?standalone=1">Chrome</a> / 
+            <a href="https://www.mozilla.org/en-US/firefox/all/">Firefox</a> /
+            <a href="https://www.google.com/chrome/?standalone=1">Chrome</a> /
             <a href="https://www.torproject.org/">Tor</a>
         </div>
     </section>
@@ -218,23 +268,23 @@
         <div class="title">下载</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.internetdownloadmanager.com/download.html">IDM</a> / 
-            <a href="https://www.neatdownloadmanager.com/index.php/en/">NDM</a> / 
-            <a href="https://github.com/aria2/aria2/releases">aria2</a> / 
-            <a href="https://github.com/subhra74/xdm/releases">X</a> / 
-            <!-- <a href="https://www.freedownloadmanager.org/download.htm">FDM</a> /  -->
-            <a href="https://www.qbittorrent.org/download">qBittorrent</a> / 
+            <a class="fee" href="https://www.internetdownloadmanager.com/download.html">IDM</a> /
+            <a href="https://www.neatdownloadmanager.com/index.php/en/">NDM</a> /
+            <a href="https://github.com/aria2/aria2/releases">aria2</a>/
+            <!-- <a href="https://github.com/subhra74/xdm/releases">X</a> /  -->
+            <a href="https://www.freedownloadmanager.org/download.htm">FDM</a>/
+            <a href="https://www.qbittorrent.org/download">qBittorrent</a>/
             <a class="cn" href="https://dl.xunlei.com/">迅雷</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://play.google.com/store/apps/details?id=com.dv.adm">ADM</a> / 
+            <a href="https://play.google.com/store/apps/details?id=com.dv.adm">ADM</a> /
             <a href="https://play.google.com/store/apps/details?id=org.freedownloadmanager.fdm">FDM</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://flareget.com/download.html">FlareGet</a> / 
-            <a href="https://github.com/persepolisdm/persepolis/releases">Persepolis</a> / 
+            <a href="https://flareget.com/download.html">FlareGet</a> /
+            <a href="https://github.com/persepolisdm/persepolis/releases">Persepolis</a> /
         </div>
     </section>
 
@@ -242,13 +292,13 @@
         <div class="title">压缩软件</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.rarlab.com/download.htm">WinRAR</a> / 
-            <a href="https://peazip.github.io/">PeaZip</a> / 
-            <a href="https://www.7-zip.org/">7-zip</a>
+            <a class="fee" href="https://www.rarlab.com/download.htm">WinRAR</a> /
+            <a href="https://www.7-zip.org/">7-zip</a> /
+            <a href="https://peazip.github.io/">PeaZip</a> /
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> / 
+            <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver">ZArchiver</a> /
             <a href="https://play.google.com/store/apps/details?id=com.rarlab.rar">RAR</a>
         </div>
         <div class="space"></div>
@@ -261,24 +311,26 @@
         <div class="title">聊天</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://signal.org/">Signal</a>/ 
+            <a href="https://signal.org/">Signal</a>/
             <!-- <a href="https://getsession.org/download">Session</a>/  -->
-            <a href="https://www.microsoft.com/en-us/microsoft-teams/download-app">Teams</a>/ 
-            <a href="https://telegram.org/">Telegram</a> / 
-            <a class="cn" href="https://weixin.qq.com/">微信</a>/ 
+            <a href="https://www.microsoft.com/en-us/microsoft-teams/download-app">Teams</a>/
+            <a href="https://telegram.org/">Telegram</a> /
+            <a class="cn" href="https://weixin.qq.com/">微信</a>/
             <a class="cn" href="https://im.qq.com/pcqq/">QQ</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://signal.org/">Signal</a> / 
-            <a href="https://app.wire.com/">Wire</a> / 
-            <a href="https://play.google.com/store/apps/details?id=com.microsoft.teams">Teams</a> / 
-            <a href="https://telegram.org/">Telegram</a> / 
+            <a href="https://signal.org/">Signal</a> /
+            <a href="https://app.wire.com/">Wire</a> /
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.teams">Teams</a> /
+            <a href="https://telegram.org/">Telegram</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.microsoft.com/en-us/microsoft-teams/free">Teams</a> / 
-            <a href="https://telegram.org/">Telegram</a> / 
+            <a href="https://getsession.org/download">Session</a> /
+            <a href="https://simplex.chat/downloads/">SimpleX</a> /
+            <a href="https://www.microsoft.com/en-us/microsoft-teams/free">Teams</a> /
+            <a href="https://telegram.org/">Telegram</a> /
         </div>
     </section>
 
@@ -286,24 +338,24 @@
         <div class="title">播放器</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://potplayer.daum.net/">Potplayer</a> / 
-            <a href="https://github.com/Nevcairiel/LAVFilters/releases">L</a>/<a href="https://madvr.com/">M</a> / 
-            <a href="https://mpv.io/installation/">mpv</a> / 
-            <a href="https://www.foobar2000.org/download">foobar2000</a> / 
+            <a href="https://potplayer.daum.net/">Potplayer</a> /
+            <a href="https://github.com/Nevcairiel/LAVFilters/releases">L</a>/<a href="https://madvr.com/">M</a> /
+            <a href="https://mpv.io/installation/">mpv</a> /
+            <a href="https://www.foobar2000.org/download">foobar2000</a> /
             <a href="https://www.crintsoft.com/minilyrics/">Lyrics</a>
             <!-- <a class="cn" href="https://github.com/ESLyric/release/releases">ESLyric</a> -->
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://mxplayerdownload.co/">MX Player</a> / 
+            <a href="https://mxplayerdownload.co/">MX Player</a> /
             <a href="https://play.google.com/store/apps/details?id=org.videolan.vlc">VLC</a> /
             <a href="https://github.com/nova-video-player/aos-AVP/releases">NOVA</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.videolan.org/vlc/">VLC</a> / 
-            <a href="https://mpv.io/installation/">mpv</a> / 
-            <a href="https://docs.xfce.org/apps/parole/start">Parole</a> / 
+            <a href="https://www.videolan.org/vlc/">VLC</a> /
+            <a href="https://mpv.io/installation/">mpv</a> /
+            <a href="https://docs.xfce.org/apps/parole/start">Parole</a> /
             <a href="https://www.audacityteam.org/download/linux/">Audacity</a>
         </div>
     </section>
@@ -312,14 +364,14 @@
         <div class="title">文件管理</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.voidtools.com/">Everything</a>/ 
-            <a class="cn" href="https://www.listary.com/download">Listary</a>/ 
-            <a href="https://anytxt.net/download/">AnyTXT</a>/ 
-            <a href="https://sourceforge.net/p/doublecmd/wiki/Download/">Double</a>/ 
+            <a href="https://www.voidtools.com/">Everything</a>/
+            <a class="cn" href="https://www.listary.com/download">Listary</a>/
+            <a href="https://anytxt.net/download/">AnyTXT</a>/
+            <a href="https://sourceforge.net/p/doublecmd/wiki/Download/">Double</a>/
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://forum.xda-developers.com/showthread.php?t=1523691">MiXplorer</a> / 
+            <a href="https://forum.xda-developers.com/showthread.php?t=1523691">MiXplorer</a> /
             <a href="https://www.lonelycatgames.com/apps/xplore">X-plore</a> /
             <!-- <a class="cn" href="http://www.ipmsg.org.cn/">飞鸽</a>/ -->
             <a href="https://www.feem.io/#download">Feem</a>/
@@ -327,10 +379,10 @@
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://apps.kde.org/dolphin/">Dolphin</a> / 
-            <a href="https://apps.gnome.org/Nautilus/">Files</a> / 
-            <a href="https://sourceforge.net/p/doublecmd/wiki/Download/">Double</a> / 
-            <a href="https://github.com/albertlauncher/albert/releases">Albert</a> / 
+            <a href="https://apps.kde.org/dolphin/">Dolphin</a> /
+            <a href="https://apps.gnome.org/Nautilus/">Files</a> /
+            <a href="https://sourceforge.net/p/doublecmd/wiki/Download/">Double</a> /
+            <a href="https://github.com/albertlauncher/albert/releases">Albert</a> /
         </div>
     </section>
 
@@ -343,11 +395,11 @@
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a class="cn" href="https://play.google.com/store/apps/details?id=com.jingdong.app.mall">京东</a> / 
-            <a class="cn" href="https://play.google.com/store/apps/details?id=com.taobao.taobao">淘宝</a> / 
-            <a class="cn" href="https://www.pinduoduo.com/home/download/">拼多多</a> / 
-            <a class="cn" href="https://play.google.com/store/apps/details?id=com.sankuai.meituan">美团</a> / 
-            <a class="cn" href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically">抖音</a> / 
+            <a class="cn" href="https://play.google.com/store/apps/details?id=com.jingdong.app.mall">京东</a> /
+            <a class="cn" href="https://play.google.com/store/apps/details?id=com.taobao.taobao">淘宝</a> /
+            <a class="cn" href="https://www.pinduoduo.com/home/download/">拼多多</a> /
+            <a class="cn" href="https://play.google.com/store/apps/details?id=com.sankuai.meituan">美团</a> /
+            <a class="cn" href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically">抖音</a> /
             <a class="cn" href="https://play.google.com/store/apps/details?id=com.sina.weibo">微博</a>
         </div>
         <div class="space"></div>
@@ -359,22 +411,22 @@
         <div class="title">阅读</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="ftp://ftp.adobe.com/pub/adobe/reader/win/Acrobat2020/">AcrobatReader</a>/ 
-            <a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer">Sumatra</a>/ 
-            <a href="https://www.pdfgear.com/pdfgear-for-windows/">PDFgear</a>/ 
+            <a href="ftp://ftp.adobe.com/pub/adobe/reader/win/Acrobat2020/">AcrobatReader</a>/
+            <a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer">Sumatra</a>/
+            <a href="https://www.pdfgear.com/pdfgear-for-windows/">PDFgear</a>/
             <a href="https://www.aconvert.com">转换</a>/
             <a href="https://convertio.co/zh/">1</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://play.google.com/store/apps/details?id=com.adobe.reader">Acrobat Reader</a> / 
+            <a href="https://play.google.com/store/apps/details?id=com.adobe.reader">Acrobat Reader</a> /
             <a href="https://play.google.com/store/apps/details?id=com.amazon.kindle">Kindle</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.xodo.com/">Xodo</a> / 
-            <a href="https://code-industry.net/masterpdfeditor/">Master PDF Editor</a> / 
-            <a href="https://github.com/troyeguo/koodo-reader/releases">Koodo Reader</a> / 
+            <a href="https://www.xodo.com/">Xodo</a> /
+            <a href="https://code-industry.net/masterpdfeditor/">Master PDF Editor</a> /
+            <a class="cn" href="https://github.com/troyeguo/koodo-reader/releases">Koodo Reader</a> /
         </div>
     </section>
 
@@ -386,25 +438,25 @@
             <a href="https://omegat.org/">OmegaT</a>/
             <a class="cn" href="https://github.com/pot-app/pot-desktop/releases">pot</a>/
             <a class="cn" href="https://github.com/ZGGSONG/STranslate">STranslat</a>/
-            <a class="fee cn" href="https://gt4t.cn/download.php">GT4T</a>/ 
-            <a class="cn" href="https://github.com/goldendict/goldendict/releases">GDict</a>/ 
+            <a class="fee cn" href="https://gt4t.cn/download.php">GT4T</a>/
+            <a class="cn" href="https://github.com/goldendict/goldendict/releases">GDict</a>/
             <a class="cn" href="https://mdict.org/">1</a>
             <a class="cn" href="https://downloads.freemdict.com/Recommend/">2</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://www.flitto.com/">Flitto</a> / 
-            <a class="cn" href="https://www.eudic.net">欧路</a> / 
-            <a href="https://www.deepl.com/translator">DeepL</a> / 
-            <a href="https://translate.google.com/?hl=zh-CN">Google</a> / 
-            <a href="https://www.reverso.net/">Reverso</a>
+            <a href="https://www.flitto.com/">Flitto</a> /
+            <a href="https://www.deepl.com/translator">DeepL</a> /
+            <a href="https://translate.google.com/?hl=zh-CN">Google</a> /
+            <a href="https://www.reverso.net/">Reverso</a> /
+            <a class="cn" href="https://www.eudic.net">欧路</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a class="cn" href="https://github.com/xiaoyifang/goldendict-ng/releases">GoldenDict</a> / 
+            <a class="cn" href="https://github.com/xiaoyifang/goldendict-ng/releases">GoldenDict</a> /
             <a class="cn" href="https://github.com/ripperhe/Bob/releases">Bob</a> /
-            <a class="cn" href="https://github.com/tisfeng/Easydict/releases">Easydict</a> / 
-            <a class="fee" href="https://translator.felo.me/zh-TW">Felo翻譯機</a> / 
+            <a class="cn" href="https://github.com/tisfeng/Easydict/releases">Easydict</a> /
+            <a class="fee" href="https://translator.felo.me/zh-TW">Felo翻譯機</a> /
         </div>
     </section>
 
@@ -412,16 +464,17 @@
         <div class="title"><a href="https://kb.mindmanager.com/en/125300">思维导图</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.mindmanager.com/en/support/download-library/">MindManager</a> / 
-            <a href="https://www.toketaware.com/ithoughts-win">iThoughts</a> / 
-            <a class="cn" href="https://xmind.app/download/">XMind</a> / 
+            <a class="fee" href="https://www.mindmanager.com/en/support/download-library/">MindManager</a> /
+            <a href="https://www.toketaware.com/ithoughts-win">iThoughts</a> /
+            <a class="cn" href="https://xmind.app/download/">XMind</a> /
         </div>
         <div class="space"></div>
         <div class="Android">
+            <a href="https://www.figma.com/downloads/">Figma</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://github.com/jgraph/drawio-desktop/releases">draw.io</a> / 
+            <a href="https://github.com/jgraph/drawio-desktop/releases">draw.io</a> /
             <a class="cn" href="https://www.zhixi.com/">知犀</a>
         </div>
     </section>
@@ -430,9 +483,9 @@
         <div class="title">日记</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.onenote.com/download">OneNote</a> / 
-            <a href="https://www.notion.so/desktop">Notion</a> / 
-            <a href="https://joplinapp.org/">Joplin</a> / 
+            <a href="https://www.onenote.com/download">OneNote</a> /
+            <a href="https://www.notion.so/desktop">Notion</a> /
+            <a href="https://joplinapp.org/">Joplin</a> /
             <!-- <a class="cn" href="https://obsidian.md/download">Obsidian</a> /  -->
             <a href="https://notepad-plus-plus.org/downloads/">Notepad++</a>
         </div>
@@ -442,7 +495,7 @@
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.zettlr.com/download">Zettlr</a> / 
+            <a href="https://www.zettlr.com/download">Zettlr</a> /
         </div>
     </section>
 
@@ -450,25 +503,25 @@
         <div class="title">图形图像</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.adobe.com/downloads.html">Creative Cloud</a>/ 
-            <a class="fee" href="https://helpx.adobe.com/photoshop/kb/uptodate.html">Photoshop</a>/ 
-            <a href="https://www.gimp.org/downloads/">GIMP</a>/ 
-            <!-- <a href="https://krita.org/en/download/">Krita</a>/  -->
-            <a class="fee" href="https://www.autodesk.com.cn/education/free-software/featured">CAD</a>
+            <a class="fee" href="https://www.adobe.com/downloads.html">Creative Cloud</a>/
+            <a class="fee" href="https://helpx.adobe.com/photoshop/kb/uptodate.html">Photoshop</a>/
+            <a href="https://www.gimp.org/downloads/">GIMP</a>/
+            <a href="https://www.affinity.studio/download">Affinity</a>/
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://www.sketchbook.com/">Sketchbook</a> / 
-            <a href="https://www.vsco.co/">VSCO</a> / 
-            <a href="https://play.google.com/store/apps/details?id=com.niksoftware.snapseed">Snapseed</a> / 
-            <a class="fee" href="https://pixlr.com/mobile">Pixlr</a> / 
+            <a href="https://www.sketchbook.com/">Sketchbook</a> /
+            <a href="https://www.vsco.co/">VSCO</a> /
+            <a href="https://play.google.com/store/apps/details?id=com.niksoftware.snapseed">Snapseed</a> /
+            <a class="fee" href="https://pixlr.com/mobile">Pixlr</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.gimp.org/downloads/">GIMP</a> / 
-            <a href="https://inkscape.org/release/">Inkscape</a> / 
-            <a href="https://www.blender.org/download/">Blender</a> / 
-            <a href="https://kdenlive.org/en/download/">Kdenlive</a> / 
+            <a href="https://www.gimp.org/downloads/">GIMP</a> /
+            <a href="https://inkscape.org/release/">Inkscape</a> /
+            <a href="https://www.blender.org/download/">Blender</a> /
+            <a href="https://kdenlive.org/en/download/">Kdenlive</a> /
+            <a class="fee" href="https://www.autodesk.com.cn/education/free-software/featured">CAD</a>
         </div>
     </section>
 
@@ -489,9 +542,9 @@
         <div class="title"><a href="https://www.virusbulletin.com/testing/">收费杀毒</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.bitdefender.com/">Bitdefender</a> / 
-            <a class="fee" href="https://www.eset.com/int/home/smart-security/#download/">ESET</a> / 
-            <a class="fee" href="https://www.broadcom.cn/products/cyber-security/endpoint/end-user">Symantec</a> / 
+            <a class="fee" href="https://www.bitdefender.com/">Bitdefender</a> /
+            <a class="fee" href="https://www.eset.com/int/home/smart-security/#download/">ESET</a> /
+            <a class="fee" href="https://www.broadcom.cn/products/cyber-security/endpoint/end-user">Symantec</a> /
             <a class="fee" href="https://usa.kaspersky.com/downloads">Kaspersky</a>
         </div>
         <div class="space"></div>
@@ -506,15 +559,15 @@
         <div class="title"><a href="https://www.av-test.org/en/antivirus/">免费杀毒</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://aka.ms/WindowsDefenderPreview">Microsoft Defender</a> / 
-            <a href="https://www.avira.com/en/downloads">Avira</a>  / 
-            <a href="https://www.avast.com/free-antivirus-download">Avast</a> / 
+            <a href="https://aka.ms/WindowsDefenderPreview">Microsoft Defender</a> /
+            <a href="https://www.avira.com/en/downloads">Avira</a> /
+            <a href="https://www.avast.com/free-antivirus-download">Avast</a> /
             <a href="https://www.safer-networking.org/free-download/">Spybot</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://www.bitdefender.com/solutions/mobile-security-android.html">Bitdefender</a> / 
-            <a href="https://www.avast.com/free-mobile-security">Avast</a>  / 
+            <a href="https://www.bitdefender.com/solutions/mobile-security-android.html">Bitdefender</a> /
+            <a href="https://www.avast.com/free-mobile-security">Avast</a> /
             <a href="https://www.mcafeemobilesecurity.com/">McAfee</a>
         </div>
         <div class="space"></div>
@@ -526,11 +579,13 @@
         <div class="title"><a href="https://www.av-comparatives.org/testmethod/summary-reports/">单文件杀</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.emsisoft.com/en/home/emergencykit/download/">EEK</a> <a href="https://dl.emsisoft.com/EmsisoftEmergencyKit.exe">d</a>/ 
-            <a href="https://download.geo.drweb.com/pub/drweb/cureit/cureit.exe">Dr.Web</a> <a href="https://free.drweb.ru/download+cureit/gr/">d</a>/ 
-            <a href="https://devbuilds.s.kaspersky-labs.com/devbuilds/KVRT/latest/full/KVRT.exe">KVRT</a>/ 
+            <a href="https://www.emsisoft.com/en/home/emergencykit/download/">EEK</a> <a
+                href="https://dl.emsisoft.com/EmsisoftEmergencyKit.exe">d</a>/
+            <a href="https://download.geo.drweb.com/pub/drweb/cureit/cureit.exe">Dr.Web</a> <a
+                href="https://free.drweb.ru/download+cureit/gr/">d</a>/
+            <a href="https://devbuilds.s.kaspersky-labs.com/devbuilds/KVRT/latest/full/KVRT.exe">KVRT</a>/
             <!-- <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/intelligence/safety-scanner-download">MSS</a> /  -->
-            <a href="https://support.norton.com/sp/static/external/tools/npe.html">NPE</a>/ 
+            <a href="https://support.norton.com/sp/static/external/tools/npe.html">NPE</a>/
             <!-- <a href="https://www.mcafee.com/enterprise/en-us/downloads/free-tools/stinger.html">Stinger</a> /  -->
             <a href="https://downloads.malwarebytes.com/file/adwcleaner">AdwCleaner</a>
         </div>
@@ -546,9 +601,9 @@
         <div class="title">防火墙</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://personalfirewall.comodo.com/free-download.php">Comodo</a>/ 
-            <a href="https://www.zonealarm.com/software/free-firewall/">ZoneAlarm</a>/ 
-            <a href="https://www.evorim.com/free-firewall">Freewall</a>/ 
+            <a class="fee" href="https://personalfirewall.comodo.com/free-download.php">Comodo</a>/
+            <a href="https://www.zonealarm.com/software/free-firewall/">ZoneAlarm</a>/
+            <a href="https://www.evorim.com/free-firewall">Freewall</a>/
             <a href="https://github.com/henrypp/simplewall/releases">simplewall</a>
             <!-- <a href="https://www.henrypp.org/product/simplewall">simplewall</a> -->
         </div>
@@ -564,15 +619,15 @@
         <div class="title">虚拟机</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://customerconnect.vmware.com/cn/downloads/#all_products">VMware</a> / 
-            <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> / 
-            <a href="https://sandboxie-plus.com/downloads/">Sandboxie</a> / 
+            <a class="fee" href="https://customerconnect.vmware.com/cn/downloads/#all_products">VMware</a> /
+            <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> /
+            <a href="https://sandboxie-plus.com/downloads/">Sandboxie</a> /
             <a href="http://www.shadowdefender.com/download.html">Shadow</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            emulator -avd 设备/ 
-            <a href="https://visualstudio.microsoft.com/zh-hans/vs/msft-android-emulator/">Microsoft</a> / 
+            emulator -avd 设备/
+            <a href="https://visualstudio.microsoft.com/zh-hans/vs/msft-android-emulator/">Microsoft</a> /
             <a href="https://www.genymotion.com/">Genymotion</a>
         </div>
         <div class="space"></div>
@@ -585,9 +640,9 @@
         <div class="title">加密</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.openpgp.org/software/">PGP</a> / 
-            <a href="https://gnupg.org/download/index.en.html">GnuPG</a> / 
-            <a href="https://www.gpg4win.org/download.html">Gpg4win</a> / 
+            <a class="fee" href="https://www.openpgp.org/software/">PGP</a> /
+            <a href="https://gnupg.org/download/index.en.html">GnuPG</a> /
+            <a href="https://www.gpg4win.org/download.html">Gpg4win</a> /
             <a href="https://www.veracrypt.fr/en/Downloads.html">VeraCrypt</a>
         </div>
         <div class="space"></div>
@@ -602,18 +657,18 @@
         <div class="title"><a href="Dism /online /Cleanup-Image /StartComponentCleanup /ResetBase">垃圾清理</a></div>
         <div class="space"></div>
         <div class="Windows">
-            Cleanmgr/ 
-            <a class="fee" href="https://www.wisecleaner.com/wise-care-365.html">Wise Care</a> / 
-            <a href="https://www.bleachbit.org/download">BleachBit</a> / 
+            Cleanmgr/
+            <a class="fee" href="https://www.wisecleaner.com/wise-care-365.html">Wise Care</a> /
+            <a href="https://www.bleachbit.org/download">BleachBit</a> /
             <a href="https://www.revouninstaller.com/start-freeware-download/">Revo</a>
         </div>
         <div class="space"></div>
         <div class="Android">
             <a href="https://apkpure.net/sd-maid-2-se-system-cleaner/eu.darken.sdmse">SD Maid</a> /
-            <a class="fee" href="https://www.avast.com/en-us/cleanup">Avast</a>/ 
-            <a href="https://www.ccleaner.com/ccleaner-android">CCleaner</a> / 
-            <a href="https://www.diskanalyzer.com/download">WizTree</a>/ 
-            <a href="http://www.uderzo.it/main_products/space_sniffer/">Space</a> 
+            <a class="fee" href="https://www.avast.com/en-us/cleanup">Avast</a>/
+            <a href="https://www.ccleaner.com/ccleaner-android">CCleaner</a> /
+            <a href="https://www.diskanalyzer.com/download">WizTree</a>/
+            <a href="http://www.uderzo.it/main_products/space_sniffer/">Space</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
@@ -624,10 +679,11 @@
         <div class="title">数据恢复</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.r-studio.com/data-recovery-software/">R-STUDIO</a>/ 
-            <a href="https://www.stellarinfo.com/windows-raid-recovery.php">Stellar</a>/ 
+            <a class="fee" href="https://www.r-studio.com/data-recovery-software/">R-STUDIO</a>/
+            <a href="https://www.stellarinfo.com/windows-raid-recovery.php">Stellar</a>/
             <!-- <a href="https://www.cleverfiles.com/data-recovery-software.html">Disk Drill</a> /  -->
-            <a href="https://apps.microsoft.com/store/detail/windows-file-recovery/9N26S50LN705">Windows File Recovery</a>
+            <a href="https://apps.microsoft.com/store/detail/windows-file-recovery/9N26S50LN705">Windows File
+                Recovery</a>
         </div>
         <div class="space"></div>
         <div class="Android">
@@ -644,10 +700,10 @@
         <div class="title">编程语言</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.tiobe.com/tiobe-index/">排行</a>, 
-            <a href="https://spectrum.ieee.org/top-programming-languages-2025">IEEE</a>, 
-            <a href="https://innovationgraph.github.com/global-metrics/programming-languages">GitHub</a>, 
-            <a href="https://survey.stackoverflow.co/2025/technology#most-popular-technologies">StackOverflow</a>, 
+            <a href="https://www.tiobe.com/tiobe-index/">排行</a>,
+            <a href="https://spectrum.ieee.org/top-programming-languages-2025">IEEE</a>,
+            <a href="https://innovationgraph.github.com/global-metrics/programming-languages">GitHub</a>,
+            <a href="https://survey.stackoverflow.co/2025/technology#most-popular-technologies">StackOverflow</a>,
         </div>
         <div class="space"></div>
         <div class="Android">
@@ -663,13 +719,14 @@
         <div class="title">C/C++</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://github.com/llvm/llvm-project/releases">LLVM</a>/ 
+            <a href="https://github.com/llvm/llvm-project/releases">LLVM</a>/
             <!-- <a href="https://releases.llvm.org/download.html">LLVM</a>/  -->
             <a href="https://ftp.gnu.org/gnu/gcc/">GCC</a>/
             <!-- <a href="ftp://ftp.gnu.org/gnu/gcc/">GCC</a>/ -->
             <!-- <a href="https://sourceforge.net/projects/mingw-w64/files/">MinGW</a>/  -->
-            <a href="https://www.mingw-w64.org/downloads/">w64</a>/ 
-            <a href="https://github.com/brechtsanders/winlibs_mingw/releases/">WinLibs</a>/ 
+            <a href="https://www.mingw-w64.org/downloads/">w64</a>/
+            <a href="https://github.com/skeeto/w64devkit/releases">devkit</a>/
+            <a href="https://github.com/brechtsanders/winlibs_mingw/releases/">WinLibs</a>/
             <a href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/">VC++</a>
         </div>
         <div class="space"></div>
@@ -685,11 +742,12 @@
         <div class="title">C++ <a href="https://pypl.github.io/IDE.html">IDE</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.jetbrains.com/clion/download/other.html">CLion</a> / 
-            <a href="https://download.qt.io/official_releases/online_installers/">QT</a>  / 
+            <a class="fee" href="https://www.jetbrains.com/clion/download/other.html">CLion</a> /
+            <a href="https://download.qt.io/official_releases/online_installers/">QT</a> /
             <!-- <a href="https://www.qt.io/download-qt-installer-oss">QT</a> /  -->
-            <a href="https://code.visualstudio.com/">VS Code</a> / 
-            <a class="fee" href="https://www.jetbrains.com/resharper-cpp/download/#section=offline-installer">ReSharper</a> /
+            <a href="https://code.visualstudio.com/">VS Code</a> /
+            <a class="fee"
+                href="https://www.jetbrains.com/resharper-cpp/download/#section=offline-installer">ReSharper</a> /
             <a href="https://www.rust-lang.org/tools/install">Rust</a>
         </div>
         <div class="space"></div>
@@ -697,10 +755,11 @@
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://github.com/VSCodium/vscodium/releases">VSCodium</a> / 
-            <a href="https://www.cursor.com/">Cursor</a> / 
-            <a href="https://windsurf.com/download">Windsurf</a> / 
-            <a href="https://openai.com/codex/">Codex</a> / 
+            <a href="https://github.com/VSCodium/vscodium/releases">VSCodium</a> /
+            <a href="https://www.cursor.com/">Cursor</a> /
+            <a href="https://windsurf.com/download">Windsurf</a> /
+            <a href="https://zed.dev/download">Zed</a> /
+            <a href="https://openai.com/codex/">Codex</a>
             <!-- <a href="https://github.com/neovim/neovim/releases/">Neovim</a> /  -->
             <!-- <a href="https://zed.dev/download">Zed</a> /  -->
             <!-- <a href="https://www.geany.org/download/releases/">Geany</a> /  -->
@@ -711,10 +770,10 @@
         <div class="title">Python</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.python.org/">Python</a>/ 
-            <a href="https://www.djangoproject.com/download/">Django</a>/ 
-            <a href="https://flask.palletsprojects.com/">Flask</a>/ 
-            <a class="fee" href="https://www.jetbrains.com/pycharm/">PyCharm</a>/ 
+            <a href="https://www.python.org/">Python</a>/
+            <a href="https://www.djangoproject.com/download/">Django</a>/
+            <a href="https://flask.palletsprojects.com/">Flask</a>/
+            <a class="fee" href="https://www.jetbrains.com/pycharm/">PyCharm</a>/
             <a href="https://www.anaconda.com/">Anaconda</a>
         </div>
         <div class="space"></div>
@@ -729,9 +788,9 @@
         <div class="title">Java</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.oracle.com/java/technologies/downloads/">Java</a>/ 
-            <a href="https://www.eclipse.org/downloads/">Eclipse</a>/ 
-            <a class="fee" href="https://www.jetbrains.com/idea/">IDEA</a> / 
+            <a href="https://www.oracle.com/java/technologies/downloads/">Java</a>/
+            <a href="https://www.eclipse.org/downloads/">Eclipse</a>/
+            <a class="fee" href="https://www.jetbrains.com/idea/">IDEA</a> /
         </div>
         <div class="space"></div>
         <div class="Android">
@@ -746,7 +805,7 @@
         <div class="title">.Net/VS</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://dotnet.microsoft.com/zh-cn/download">.NET</a>/ 
+            <a href="https://dotnet.microsoft.com/zh-cn/download">.NET</a>/
             <a href="https://visualstudio.microsoft.com/zh-hans/downloads/">Visual Studio</a>/
             <a class="fee" href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">Copilot</a>/
         </div>
@@ -780,17 +839,17 @@
         <div class="title">科学计算</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.mathworks.com/products/matlab.html">MATLAB</a>/ 
-            <a class="fee" href="https://www.wolfram.com/mathematica/">Mathematica</a>/ 
-            <a class="fee" href="https://www.maplesoft.com/products/Maple/">Maple</a>/ 
-            <a class="fee" href="https://www.ibm.com/products/spss-statistics">SPSS</a>/ 
+            <a class="fee" href="https://www.mathworks.com/products/matlab.html">MATLAB</a>/
+            <a class="fee" href="https://www.wolfram.com/mathematica/">Mathematica</a>/
+            <a class="fee" href="https://www.maplesoft.com/products/Maple/">Maple</a>/
+            <a class="fee" href="https://www.ibm.com/products/spss-statistics">SPSS</a>/
             <a class="fee" href="https://www.stata.com/">Stat</a>
         </div>
         <div class="space"></div>
         <div class="Android">
             <a href="https://play.google.com/store/apps/details?id=com.microblink.photomath">Photomath</a> /
-            <a href="https://play.google.com/store/apps/details?id=com.microsoft.math">Math</a> / 
-            <a href="https://play.google.com/store/apps/details?id=org.solovyev.android.calculator">Calculator++</a> / 
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.math">Math</a> /
+            <a href="https://play.google.com/store/apps/details?id=org.solovyev.android.calculator">Calculator++</a> /
             <a href="https://maxima.sourceforge.io/download.html">Maxima</a>
         </div>
         <div class="space"></div>
@@ -800,13 +859,16 @@
     </section>
 
     <section>
-        <div class="title"><a href="https://db-engines.com/en/ranking">数</a><a href="https://www.datanyze.com/market-share/databases--272">据</a><a href="https://www.gartner.com/reviews/market/cloud-database-management-systems">库</a></div>
+        <div class="title"><a href="https://db-engines.com/en/ranking">数</a><a
+                href="https://www.datanyze.com/market-share/databases--272">据</a><a
+                href="https://www.gartner.com/reviews/market/cloud-database-management-systems">库</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.oracle.com/database/technologies/oracle-database-software-downloads.html">Oracle</a>/ 
-            <a class="fee" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server</a>/ 
-            <a href="https://www.postgresql.org/download/windows/">PostgreSQL</a> / 
-            <a href="https://dev.mysql.com/downloads/">MySQL</a> / 
+            <a class="fee"
+                href="https://www.oracle.com/database/technologies/oracle-database-software-downloads.html">Oracle</a>/
+            <a class="fee" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server</a>/
+            <a href="https://www.postgresql.org/download/windows/">PostgreSQL</a> /
+            <a href="https://dev.mysql.com/downloads/">MySQL</a> /
             <!-- <a href="https://www.heidisql.com/download.php">Hi</a> -->
         </div>
         <div class="space"></div>
@@ -814,7 +876,7 @@
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://dbeaver.io/download/">DBeaver</a>/ 
+            <a href="https://dbeaver.io/download/">DBeaver</a>/
             <a href="https://navicat.com/en/products#navicat-premium-lite">Navicat</a>
         </div>
     </section>
@@ -836,19 +898,21 @@
         <div class="title">邮件</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.thunderbird.net/en-US/thunderbird/all/">Thunderbird</a> / 
-            <a href="https://www.claws-mail.org/downloads.php?section=downloads">Claws Mail</a> / 
-            <a href="https://www.microsoft.com/zh-cn/store/p/%E9%82%AE%E4%BB%B6%E5%92%8C%E6%97%A5%E5%8E%86/9wzdncrfhvqm">Mail</a> / 
+            <a href="https://www.thunderbird.net/en-US/thunderbird/all/">Thunderbird</a> /
+            <a href="https://www.claws-mail.org/downloads.php?section=downloads">Claws Mail</a> /
+            <a
+                href="https://www.microsoft.com/zh-cn/store/p/%E9%82%AE%E4%BB%B6%E5%92%8C%E6%97%A5%E5%8E%86/9wzdncrfhvqm">Mail</a>
+            /
             <a class="fee" href="https://products.office.com/en-US/outlook/">Outlook</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://k9mail.app/download">K-9</a> / 
+            <a href="https://k9mail.app/download">K-9</a> /
             <a href="https://sparkmailapp.com/">Spark</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.thunderbird.net/en-US/thunderbird/all/">Thunderbird</a> / 
+            <a href="https://www.thunderbird.net/en-US/thunderbird/all/">Thunderbird</a> /
         </div>
     </section>
 
@@ -856,15 +920,15 @@
         <div class="title">影视</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://kodi.tv/download/">Kodi</a> / 
-            <a href="https://emby.media/download.html">Emby</a> / 
-            <a href="https://www.plex.tv/apps-devices/">Plex</a> / 
-            <a href="https://sourceforge.net/projects/megui/files/">MeGUI</a> / 
+            <a href="https://kodi.tv/download/">Kodi</a> /
+            <a href="https://emby.media/download.html">Emby</a> /
+            <a href="https://www.plex.tv/apps-devices/">Plex</a> /
+            <a href="https://sourceforge.net/projects/megui/files/">MeGUI</a> /
             <a href="https://handbrake.fr/downloads.php">HandBrake</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://kodi.tv/download/">Kodi</a> / 
+            <a href="https://kodi.tv/download/">Kodi</a> /
             <a href="https://libreelec.tv/">LibreELEC</a> /
             <a href="https://tivimate.com/">TiviMate</a> /
             <a class="cn" href="https://github.com/o0HalfLife0o/TVBoxOSC/releases/">TVBox</a>
@@ -879,10 +943,10 @@
         <div class="title">视频会议</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.webex.com/">Webex</a>/ 
-            <a href="https://apps.google.com/meet/">Meet</a>/ 
+            <a href="https://www.webex.com/">Webex</a>/
+            <a href="https://apps.google.com/meet/">Meet</a>/
             <a href="https://www.microsoft.com/zh-cn/microsoft-teams/group-chat-software">Teams</a> /
-            <a href="https://www.bluejeans.com/downloads">BlueJeans</a> / 
+            <a href="https://www.bluejeans.com/downloads">BlueJeans</a> /
             <a class="cn" href="https://meeting.tencent.com/download/">腾讯会议</a>
         </div>
         <div class="space"></div>
@@ -897,11 +961,11 @@
         <div class="title">屏幕录像</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.techsmith.com/download/camtasia/">Camtasia</a>/ 
+            <a class="fee" href="https://www.techsmith.com/download/camtasia/">Camtasia</a>/
             <a href="https://obsproject.com/">OBS</a>/
-            <a href="https://screenrec.com/screen-recorder/">ScrRec</a> / 
-            <a href="https://www.techsmith.com/jing-tool.html">Jing</a> / 
-            <a href="https://github.com/Code52/carnac/releases">carnac</a>/ 
+            <a href="https://screenrec.com/screen-recorder/">ScrRec</a> /
+            <a href="https://www.techsmith.com/jing-tool.html">Jing</a> /
+            <a href="https://github.com/Code52/carnac/releases">carnac</a>/
         </div>
         <div class="space"></div>
         <div class="Android">
@@ -917,21 +981,21 @@
         <div class="title">远程桌面</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.teamviewer.com/en-us/download/windows/">TeamViewer</a> / 
-            <a href="https://parsec.app/downloads">Parsec</a> / 
-            <a href="https://moonlight-stream.org/">Moonlight</a> / 
-            <a class="cn" href="https://www.todesk.com/download.html">ToDesk</a> /
+            <a href="https://www.teamviewer.com/en-us/download/windows/">TeamViewer</a> /
+            <a href="https://parsec.app/downloads">Parsec</a> /
+            <a href="https://moonlight-stream.org/">Moonlight</a> /
+            <a class="cn" href="https://uuyc.163.com/">UU远程</a> /
             <!-- <a href="https://anydesk.com/en/downloads/windows">AnyDesk</a> / -->
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://www.teamviewer.com/zhcn/download/mobile-apps/">TeamViewer</a> / 
-            <a href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.android">Remote desktop</a> / 
+            <a href="https://www.teamviewer.com/zhcn/download/mobile-apps/">TeamViewer</a> /
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.android">Remote desktop</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://www.teamviewer.com/en/download/linux/">TeamViewer</a> / 
-            <a href="https://remmina.org/how-to-install-remmina/">remmina</a> / 
+            <a href="https://www.teamviewer.com/en/download/linux/">TeamViewer</a> /
+            <a href="https://remmina.org/how-to-install-remmina/">remmina</a> /
         </div>
     </section>
 
@@ -939,9 +1003,9 @@
         <div class="title">窗口置顶</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.sordum.org/9182/window-topmost-control-v1-3/">TopMost</a>/ 
-            <a href="https://github.com/Bluegrams/PinWin">PinWin</a>/ 
-            <a href="https://github.com/LorenzCK/OnTopReplica/releases">OnTopReplica</a>/ 
+            <a href="https://www.sordum.org/9182/window-topmost-control-v1-3/">TopMost</a>/
+            <a href="https://github.com/Bluegrams/PinWin">PinWin</a>/
+            <a href="https://github.com/LorenzCK/OnTopReplica/releases">OnTopReplica</a>/
             <a href="https://efotinis.neocities.org/deskpins/">DeskPins</a>
         </div>
         <div class="space"></div>
@@ -956,17 +1020,17 @@
         <div class="title">换脸</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://github.com/hacksider/Deep-Live-Cam">DLC</a>/ 
-            <a href="https://github.com/C0untFloyd/roop-unleashed">Roop</a>/ 
-            <a href="https://github.com/iperov/DeepFaceLive">DeepFaceLive</a>/ 
-            <a href="https://github.com/facefusion/facefusion">facefusion</a>/ 
+            <a href="https://github.com/hacksider/Deep-Live-Cam">DLC</a>/
+            <a href="https://github.com/C0untFloyd/roop-unleashed">Roop</a>/
+            <a href="https://github.com/iperov/DeepFaceLive">DeepFaceLive</a>/
+            <a href="https://github.com/facefusion/facefusion">facefusion</a>/
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://faceswapper.ai/swapper">FaceSwap</a>/ 
-            <a href="https://remaker.ai/face-swap-free/">Remaker</a>/ 
-            <a href="https://github.com/Hillobar/Rope">Rope</a>/ 
-            <a href="https://faceswap.akool.com/">Akool</a>/ 
+            <a href="https://faceswapper.ai/swapper">FaceSwap</a>/
+            <a href="https://remaker.ai/face-swap-free/">Remaker</a>/
+            <a href="https://github.com/Hillobar/Rope">Rope</a>/
+            <a href="https://faceswap.akool.com/">Akool</a>/
             <!-- <a href="https://www.deepswap.ai/">Deepswap</a>/  -->
             <!-- <a href="https://www.jumirui.com/">miFace</a> -->
         </div>
@@ -984,7 +1048,7 @@
             <a href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">RbVCW</a>/
             <a href="https://github.com/w-okada/voice-changer">voice-changer</a>/
             <!-- <a href="https://github.com/PaddlePaddle/PaddleSpeech">PaddleSpeech</a>/ -->
-            <a href="https://www.voicemod.net/">Voicemod</a>/ 
+            <a href="https://www.voicemod.net/">Voicemod</a>/
         </div>
         <div class="space"></div>
         <div class="Android">
@@ -998,15 +1062,15 @@
         <div class="title">元数据</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://github.com/szTheory/exifcleaner/releases">ExifCleaner</a> / 
+            <a href="https://github.com/szTheory/exifcleaner/releases">ExifCleaner</a> /
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://github.com/Tommy-Geenexus/exif-eraser/releases">ExifEraser</a> / 
+            <a href="https://github.com/Tommy-Geenexus/exif-eraser/releases">ExifEraser</a> /
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://github.com/szTheory/exifcleaner/releases">ExifCleaner</a> / 
+            <a href="https://github.com/szTheory/exifcleaner/releases">ExifCleaner</a> /
         </div>
     </section>
 
@@ -1014,8 +1078,8 @@
         <div class="title">论文文献</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.tug.org/texlive/">TeXLive</a>/ 
-            <a href="https://www.texstudio.org/">TeXstudio</a>/ 
+            <a href="https://www.tug.org/texlive/">TeXLive</a>/
+            <a href="https://www.texstudio.org/">TeXstudio</a>/
             <a href="https://www.zotero.org/download/">Zotero</a>/
             <a href="https://www.mendeley.com/download-reference-manager/windows">Mendeley</a>/
             <a class="fee" href="https://endnote.com/downloads/">End</a>
@@ -1032,8 +1096,8 @@
         <div class="title">抓包嗅探</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.liveaction.com/products/omnipeek-network-protocol-analyzer/">Omnipeek</a> / 
-            <a href="https://www.wireshark.org/">Wireshark</a> / 
+            <a class="fee" href="https://www.liveaction.com/products/omnipeek-network-protocol-analyzer/">Omnipeek</a> /
+            <a href="https://www.wireshark.org/">Wireshark</a> /
             <a href="https://www.microsoft.com/en-us/download/4865">Network Monitor</a>
         </div>
         <div class="space"></div>
@@ -1049,8 +1113,8 @@
         <div class="title">开发抓包</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.postman.com/downloads/">Postman</a> / 
-            <a href="https://www.telerik.com/download/fiddler">Fiddler</a> / 
+            <a href="https://www.postman.com/downloads/">Postman</a> /
+            <a href="https://www.telerik.com/download/fiddler">Fiddler</a> /
             <a href="https://www.charlesproxy.com/download/">Charles</a>
         </div>
         <div class="space"></div>
@@ -1065,10 +1129,10 @@
         <div class="title">内网穿透</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.zerotier.com/download/">ZeroTier</a> / 
-            <a href="https://tailscale.com/download/">Tailscale</a> / 
-            <a href="https://github.com/fatedier/frp/releases">frp</a> / 
-            <a class="cn" href="https://www.cpolar.com/download">cpolar</a> / 
+            <a href="https://www.zerotier.com/download/">ZeroTier</a> /
+            <a href="https://tailscale.com/download/">Tailscale</a> /
+            <a href="https://github.com/fatedier/frp/releases">frp</a> /
+            <a class="cn" href="https://www.cpolar.com/download">cpolar</a> /
             <a href="https://ngrok.com/download">ngrok</a>
         </div>
         <div class="space"></div>
@@ -1076,8 +1140,8 @@
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://kdeconnect.kde.org/download.html">KDE Connect</a> / 
-            <a href="https://extensions.gnome.org/extension/1319/gsconnect/">GSConnect</a> / 
+            <a href="https://kdeconnect.kde.org/download.html">KDE Connect</a> /
+            <a href="https://extensions.gnome.org/extension/1319/gsconnect/">GSConnect</a> /
         </div>
     </section>
 
@@ -1085,10 +1149,10 @@
         <div class="title"><a href="https://news.netcraft.com/archives/category/web-server-survey/">Web 服务</a></div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://nginx.org/en/download.html">Nginx</a> / 
-            <a href="https://httpd.apache.org/download.cgi">Apache</a> / 
-            <a href="https://www.iis.net/downloads">IIS</a> / 
-            <a href="https://tomcat.apache.org/">Tomcat</a> / 
+            <a href="https://nginx.org/en/download.html">Nginx</a> /
+            <a href="https://httpd.apache.org/download.cgi">Apache</a> /
+            <a href="https://www.iis.net/downloads">IIS</a> /
+            <a href="https://tomcat.apache.org/">Tomcat</a> /
             <a href="https://slproweb.com/products/Win32OpenSSL.html">OpenSSL</a>
         </div>
         <div class="space"></div>
@@ -1096,8 +1160,8 @@
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://nginx.org/en/download.html">Nginx</a> / 
-            <a href="https://httpd.apache.org/download.cgi">Apache</a> 
+            <a href="https://nginx.org/en/download.html">Nginx</a> /
+            <a href="https://httpd.apache.org/download.cgi">Apache</a>
         </div>
     </section>
 
@@ -1105,7 +1169,7 @@
         <div class="title">MFT/FTP</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://filezilla-project.org/download.php?type=server">FileZilla</a> / 
+            <a href="https://filezilla-project.org/download.php?type=server">FileZilla</a> /
             <a class="fee" href="https://www.serv-u.com/ftp-server-software">Serv-U</a>
         </div>
         <div class="space"></div>
@@ -1121,9 +1185,9 @@
         <div class="title">Mail服务</div>
         <div class="space"></div>
         <div class="Windows">
-            <a class="fee" href="https://www.zimbra.com/downloads/">Zimbra</a>/ 
-            <a class="fee" href="https://www.microsoft.com/en-us/microsoft-365/exchange/">Exchange</a>/ 
-            <a class="fee" href="https://www.altn.com/Downloads/">MDaemon</a>/ 
+            <a class="fee" href="https://www.zimbra.com/downloads/">Zimbra</a>/
+            <a class="fee" href="https://www.microsoft.com/en-us/microsoft-365/exchange/">Exchange</a>/
+            <a class="fee" href="https://www.altn.com/Downloads/">MDaemon</a>/
             <a href="https://www.hmailserver.com/download">hMailServer</a>
         </div>
         <div class="space"></div>
@@ -1159,8 +1223,8 @@
         <div class="title">聊天</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://joinmastodon.org/">Mastodon</a> / 
-            <a href="https://github.com/RocketChat/Rocket.Chat">Rocket.Chat</a> / 
+            <a href="https://joinmastodon.org/">Mastodon</a> /
+            <a href="https://github.com/RocketChat/Rocket.Chat">Rocket.Chat</a> /
             <a href="https://github.com/mattermost/mattermost-server">mattermost-server</a>
             <!-- <a href="https://jitsi.org/downloads/">Jitsi</a> /  -->
         </div>
@@ -1176,13 +1240,13 @@
         <div class="title">硬件检测</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.aida64.com/downloads">AIDA64</a> / 
+            <a href="https://www.aida64.com/downloads">AIDA64</a> /
             <a href="https://www.gtopala.com/download/">SIW</a>
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://github.com/topjohnwu/Magisk/releases">Magisk</a> / 
-            <a href="https://repo.xposed.info/module/de.robv.android.xposed.installer">Xposed</a> / 
+            <a href="https://github.com/topjohnwu/Magisk/releases">Magisk</a> /
+            <a href="https://repo.xposed.info/module/de.robv.android.xposed.installer">Xposed</a> /
             <a href="https://tasker.joaoapps.com/download.html">Tasker</a>
         </div>
         <div class="space"></div>
@@ -1194,34 +1258,34 @@
         <div class="title">鸡和马</div>
         <div class="space"></div>
         <div class="Windows">
-            <a href="https://www.aihao.cc/forum-36-1.html">爱好</a>/ 
-            <a href="https://ctrl.cool/t/office">Cool</a>/ 
-            <a href="https://in.tgstat.com/channel/@Software_key">tgstat</a>/ 
-            <a href="https://t.me/s/MS_KEYS_AND_TECH_HELP_FREE?before=15316">WAREZ</a>/ 
-            <a href="https://telegram.me/s/educationlearn_academy">education</a>/ 
-            <a href="https://vk.com/office_product_keys">2</a>/ 
-            <a href="https://vk.com/keys_windows_free">3</a>/ 
+            <a href="https://www.aihao.cc/forum-36-1.html">爱好</a>/
+            <a href="https://www.aihao.cc/forum.php?mod=guide">N</a>/
+            <a href="https://ctrl.cool/t/office">Cool</a>/
+            <a href="https://t.me/s/win11activator">WAREZ</a>/
+            <!-- <a href="https://t.me/s/MS_KEYS_AND_TECH_HELP_FREE?before=15316">WAREZ</a>/  -->
+            <a href="https://in.tgstat.com/channel/@Software_key">tgstat</a>/
+            <a href="https://telegram.me/s/educationlearn_academy">education</a>/
+            <a href="https://kichhoat24h.com/category/2">S</a>/
             <!-- <a href="https://philka.ru/forum/topic/46610-kliuchi-aktivatcii-windows-10-vse-redaktcii/page-382">philka</a> / 
             <a href="https://vn-zoom.org/threads/share-key-windows-office-everyone-by-ldssk.7416/">Thảo</a> -->
         </div>
         <div class="space"></div>
         <div class="Android">
-            <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases">MAS</a> / 
+            <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases">MAS</a> /
             <a href="https://github.com/zbezj/HEU_KMS_Activator/releases">HEU_KMS_Activator</a>
         </div>
         <div class="space"></div>
         <div class="Linux">
-            <a href="https://rufus.ie/">Rufus</a> / 
-            <a href="https://webact.185.hk/">1</a> / 
-            <a href="https://jihuo.ma/tool/mscid.html">2</a> / 
-            <a href="https://t.me/s/MS_KEYS_AND_TECH_HELP_FREE">Office</a> / 
-            <a href="https://telemetr.me/content/ms_keys_and_tech_help_free">2</a> / 
-            <a href="https://www.ajihuo.com/">Idea</a> / 
-            <a href="https://t.me/s/LicenseForAll">Virus</a> / 
-            <a href="https://buzzdope.com/archives/11">2</a> / 
+            <a href="https://rufus.ie/">Rufus</a> /
+            <a href="https://webact.185.hk/">1</a> /
+            <a href="https://jihuo.ma/tool/mscid.html">2</a> /
+            <a href="https://www.ajihuo.com/">Idea</a> /
+            <a href="https://t.me/s/LicenseForAll">Virus</a> /
+            <a href="https://buzzdope.com/archives/11">2</a> /
         </div>
     </section>
 
     <div class="space"></div>
 </body>
+
 </html>
