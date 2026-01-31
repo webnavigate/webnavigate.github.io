@@ -454,7 +454,7 @@
 
                     html += `
                         <a href="${item.url}" class="card" target="_blank">
-                            <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" class="card-icon" onerror="this.src='https://www.google.com/s2/favicons?domain=google.com&sz=64'">
+                            <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" class="card-icon" onerror="handleImageError(this)" onload="handleImageSuccess(this)" data-domain="${domain}">
                             <div class="card-body">
                                 <div class="card-title">${item.title}</div>
                                 <div class="card-desc">${item.desc}</div>
@@ -470,8 +470,78 @@
             app.innerHTML = html;
         }
 
+        // 全局 Favicon 服务配置
+        // 标记是否有图标加载成功
+        let hasLoadedAnyIcon = false;
+
+        function handleImageSuccess(img) {
+            if (faviconServices[currentFaviconService].check(img.src)) {
+                hasLoadedAnyIcon = true;
+            }
+        }
+
+        // 全局 Favicon 服务配置
+        let currentFaviconService = 0; // 0: Google, 1: Yandex, 2: Direct
+        const faviconServices = [
+            { name: 'Google', getUrl: (domain) => `https://www.google.com/s2/favicons?domain=${domain}&sz=64`, check: (url) => url.includes('google.com') },
+            { name: 'Yandex', getUrl: (domain) => `https://favicon.yandex.net/favicon/${domain}`, check: (url) => url.includes('yandex.net') },
+            { name: 'Direct', getUrl: (domain) => `https://${domain}/favicon.ico`, check: (url) => url.endsWith('/favicon.ico') }
+        ];
+
+        // Favicon 加载失败处理函数（优化版：全局切换服务）
+        function handleImageError(img) {
+            const domain = img.getAttribute('data-domain');
+            const currentSrc = img.src;
+
+            // 检查当前失败的是哪个服务
+            for (let i = 0; i < faviconServices.length; i++) {
+                if (faviconServices[i].check(currentSrc)) {
+                    // 如果不是最后一个服务
+                    if (i < faviconServices.length - 1) {
+                        // 只有当全局服务还没更新到更高级别时，才更新全局服务
+                        // 防止旧的错误回调把服务等级重置回去
+                        if (currentFaviconService <= i) {
+                            currentFaviconService = i + 1;
+                            console.log(`Favicon service switched to: ${faviconServices[currentFaviconService].name}`);
+                            // 更新页面上所有还未加载的图标
+                            updateAllFavicons();
+                        }
+
+                        // 当前图标使用当前全局服务（可能是刚才更新的，也可能是已经更新过的更高级别的）
+                        img.src = faviconServices[currentFaviconService].getUrl(domain);
+                    } else {
+                        // 已经是最后一个服务了，停止重试
+                        img.onerror = null;
+                    }
+                    break;
+                }
+            }
+        }
+
+        // 更新所有图标到当前服务
+        function updateAllFavicons() {
+            const allImages = document.querySelectorAll('.card-icon');
+            allImages.forEach(img => {
+                const domain = img.getAttribute('data-domain');
+                // 只更新还在使用旧服务的图标
+                if (!faviconServices[currentFaviconService].check(img.src)) {
+                    img.src = faviconServices[currentFaviconService].getUrl(domain);
+                }
+            });
+        }
+
         // 初始化
-        document.addEventListener('DOMContentLoaded', renderNav);
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNav();
+            // 优化：如果 1.5 秒内没有加载出 Google 图标，则主动切换到 Yandex
+            setTimeout(() => {
+                if (currentFaviconService === 0 && !hasLoadedAnyIcon) {
+                    console.log('Timeout: Switching to Yandex for speed');
+                    currentFaviconService = 1;
+                    updateAllFavicons();
+                }
+            }, 1500);
+        });
 
     </script>
 </body>
